@@ -7,6 +7,7 @@ import Chart from '../core';
 import { _isData } from '../methods';
 import PropTypes from 'prop-types';
 import getTooltip from './tooltip';
+import getToolbox from './toolbox';
 import getLegend from './legend';
 import getDataset from './dataset';
 import getXAxis from './xAxis';
@@ -20,9 +21,24 @@ class BasicChart extends PureComponent {
         showTooltip: true,
         axisPointer: 'shadow',
         showLegend: true,
-        YUnit: undefined,
+        seriesLayoutBy: 'row',
+        YUnit: '',
         showY2: false,
-        Y2Index: [1],
+        Y2Unit: '',
+        Y2Series: [
+            {
+                type: 'line',
+                index: 1
+            }
+        ],
+        showY2SplitLine: false,
+        showToolbox: false,
+        showToolboxDataZoom: false,
+        showToolboxDataView: false,
+        showToolboxMagicType: true,
+        toolboxMagicType: ['line', 'bar'],
+        showToolboxRestore: true,
+        showToolboxSaveAsImage: false,
     }
     render() {
         const { data } = this.props;
@@ -31,13 +47,13 @@ class BasicChart extends PureComponent {
         }
         const option = {
             tooltip: getTooltip(this.props),
+            toolbox: getToolbox(this.props),
             legend: getLegend(this.props),
             dataset: getDataset(this.props),
             xAxis: getXAxis(this.props),
             yAxis: getYAxis(this.props),
             series: getSeries(this.props)
         }
-        debugger
         return (
             <Chart
                 option={option}
@@ -81,10 +97,24 @@ BasicChart.propTypes = {
     YUnit: PropTypes.string,
     //是否显示y2轴
     showY2: PropTypes.bool,
-    //y2轴类型，默认与y1轴相同
-    Y2Type: PropTypes.string,
     //y2轴单位
     Y2Unit: PropTypes.string,
-    //y2轴映射数据索引
-    Y2Index: PropTypes.array,
+    //y2轴映射数据索引及类型
+    Y2Series: PropTypes.arrayOf(PropTypes.object),
+    //工具栏配置项
+    toolbox: PropTypes.object,
+    //是否显示工具栏
+    showToolbox: PropTypes.bool,
+    //区域缩放
+    showToolboxDataZoom: PropTypes.bool,
+    //数据视图
+    showToolboxDataView: PropTypes.bool,
+    //是否图形切换
+    toolboxMagicType: PropTypes.bool,
+    //图形切换类型
+    ToolboxMagicType: PropTypes.array,
+    //刷新还原
+    showToolboxRestore: PropTypes.bool,
+    //保存为图片
+    showToolboxSaveAsImage: PropTypes.bool,
 };

@@ -62,7 +62,7 @@ export default function () {
           </a>
         </li>
       </ul>
-      <Line data={d} />
+      <Line data={d} showToolbox showY2 showY2SplitLine/>
       <Area data={d} />
       <Bar data={d} />
     </div>

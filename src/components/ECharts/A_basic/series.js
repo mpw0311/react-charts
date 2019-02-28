@@ -4,7 +4,7 @@
  */
 import getType from './type';
 export default (props) => {
-    const { series, data: { rows }, type, seriesLayoutBy } = props;
+    const { series, data: { rows }, type, seriesLayoutBy, showY2, Y2Series } = props;
     const setting = type.toLowerCase() === 'area' ? {
         stack: '总量',
         areaStyle: {},
@@ -19,6 +19,13 @@ export default (props) => {
                 seriesLayoutBy
             };
         }
-    });
-    return series || _series.filter(item => item !== undefined);
+    })
+        .filter(item => item !== undefined);
+    if (showY2 === true) {
+        Y2Series.forEach(item => {
+            const { type, index } = item;
+            _series[index] = { ..._series[index], type, yAxisIndex: 1 }
+        });
+    }
+    return series || _series;
 }
