@@ -4,16 +4,16 @@ import PropTypes from 'prop-types';
 // import Context from '@context';
 import chartConfig from '../config/settings';
 
-let timer = null;
+// let timer = null;
 export default class Chart extends PureComponent {
     componentDidMount() {
-        window.addEventListener('resize', () => {
-            let echarts_instance = this.echarts_react && this.echarts_react.getEchartsInstance();
-            clearTimeout(timer);
-            timer = setTimeout(() => {
-                echarts_instance && echarts_instance.resize && echarts_instance.resize();
-            }, 200);
-        });
+        // window.addEventListener('resize', () => {
+        //     let echarts_instance = this.echarts_react && this.echarts_react.getEchartsInstance();
+        //     clearTimeout(timer);
+        //     timer = setTimeout(() => {
+        //         echarts_instance && echarts_instance.resize && echarts_instance.resize();
+        //     }, 200);
+        // });
     }
     render() {
         const { style, theme = 'light', ...rest } = this.props;
