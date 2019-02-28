@@ -22,9 +22,7 @@ class BasicChart extends PureComponent {
         axisPointer: 'shadow',
         showLegend: true,
         seriesLayoutBy: 'row',
-        YUnit: '',
         showY2: false,
-        Y2Unit: '',
         Y2Series: [
             {
                 type: 'line',
@@ -110,9 +108,9 @@ BasicChart.propTypes = {
     //数据视图
     showToolboxDataView: PropTypes.bool,
     //是否图形切换
-    toolboxMagicType: PropTypes.bool,
+    showToolboxMagicType: PropTypes.bool,
     //图形切换类型
-    ToolboxMagicType: PropTypes.array,
+    toolboxMagicType: PropTypes.array,
     //刷新还原
     showToolboxRestore: PropTypes.bool,
     //保存为图片

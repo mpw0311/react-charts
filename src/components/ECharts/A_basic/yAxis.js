@@ -4,18 +4,20 @@
  */
 export default (props) => {
     const { yAxis, YName, YUnit, showY2, Y2Name, Y2Unit, showY2SplitLine } = props;
+    const YFormatter = YUnit ? { formatter: `{value}${YUnit}` } : {};
+    const Y2Formatter = Y2Unit ? { formatter: `{value}${Y2Unit}` } : {};
     if (showY2) {
         return [
             {
                 name: YName,
                 axisLabel: {
-                    formatter: `{value}${YUnit}`
+                    ...YFormatter
                 },
             },
             {
                 name: Y2Name,
                 axisLabel: {
-                    formatter: `{value}${Y2Unit}`
+                    ...Y2Formatter
                 },
                 splitLine: {
                     show: showY2SplitLine,
@@ -31,7 +33,7 @@ export default (props) => {
         return {
             name: YName,
             axisLabel: {
-                formatter: `{value}${YUnit}`
+                ...YFormatter
             },
             ...yAxis,
         };
