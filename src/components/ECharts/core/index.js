@@ -43,7 +43,7 @@ export default class Chart extends PureComponent {
 }
 Chart.propTypes = {
     //the echarts option config, can see http://echarts.baidu.com/option.html#title.
-    options: PropTypes.object.isRequired,
+    option: PropTypes.object.isRequired,
     //改变图表尺寸，在容器大小发生改变时是否需要手动调用。
     isBindResize: PropTypes.bool,
     //when setOption, not merge the data, default is false. See http://echarts.baidu.com/api.html#echartsInstance.setOption.
