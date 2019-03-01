@@ -11,15 +11,13 @@ export default class View extends PureComponent {
     }
     static getDerivedStateFromProps(nextProps, prevState) {
         if (prevState.data === undefined) {
-            return { data: nextProps.data };
+            return { ...nextProps };
         } else {
             return prevState;
         }
     }
     render() {
         const { title, data, config, rows } = this.state;
-
-        debugger
         const handleBlur = (data) => {
             this.setState({
                 data
@@ -30,11 +28,22 @@ export default class View extends PureComponent {
                 return React.cloneElement(o, { data })
             }) :
             React.cloneElement(this.props.children, { data });
+        const handleChange = (prop) => {
+            this.setState({
+                prop
+            });
+        }
         return (
             <Card title={title} bordered={false} bodyStyle={{ padding: '0 10px' }}>
                 <Row gutter={16}>
                     <Col span={10}>
-                        <ChartTab data={data} onBlur={handleBlur} rows={rows} />
+                        <ChartTab
+                            data={data}
+                            onBlur={handleBlur}
+                            rows={rows}
+                            config={config}
+                            handleChange={handleChange}
+                        />
                     </Col>
                     <Col span={14}>
                         {children}
