@@ -1,4 +1,4 @@
-import { Form, Checkbox, Input, Select } from 'antd';
+import { Form, Checkbox, Input, Select, Button } from 'antd';
 function MyForm(props) {
     const { form, config, handleSubmit = () => { } } = props;
     const { getFieldDecorator } = form;
@@ -19,6 +19,7 @@ function MyForm(props) {
                 return <Form.Item
                     {...formItemLayout}
                     label={prop}
+                    help={des}
                 >
                     {getFieldDecorator(prop, {
                         initialValue: value,
@@ -30,6 +31,7 @@ function MyForm(props) {
                 return <Form.Item
                     {...formItemLayout}
                     label={prop}
+                    help={des}
                 >
                     {getFieldDecorator(prop, {
                         initialValue: value,
@@ -42,6 +44,7 @@ function MyForm(props) {
                 return <Form.Item
                     {...formItemLayout}
                     label={prop}
+                    help={des}
                 >
                     {getFieldDecorator(prop, {
                         initialValue: value[0],
@@ -58,6 +61,11 @@ function MyForm(props) {
     return (
         <Form onSubmit={handleSubmit} style={{ textAlign: 'left' }}>
             {list}
+            <Form.Item
+                wrapperCol={{ span: 12, offset: 5 }}
+            >
+                <Button type="primary" htmlType="submit"> Submit </Button>
+            </Form.Item>
         </Form>
     );
 }
