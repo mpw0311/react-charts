@@ -66,7 +66,7 @@ export default BasicChart;
 
 BasicChart.propTypes = {
     //支持的图形类型
-    type: PropTypes.oneOf(['line', 'area', 'bar']),
+    type: PropTypes.oneOf(['line', 'area', 'bar','bar-y']),
     //数据格式校验
     data: PropTypes.shape({
         columns: PropTypes.array,

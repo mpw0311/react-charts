@@ -116,16 +116,7 @@
             "value": "",
             "des": "y2轴单位"
         },
-        {
-            "prop": "Y2Series",
-            "component": "TextArea",
-            "type": "array",
-            "value": [
-                "line",
-                "bar"
-            ],
-            "des": "y2轴映射数据索引及类型"
-        },
+      
         {
             "prop": "toolbox",
             "component": "TextArea",

@@ -1,6 +1,15 @@
 import { Form, Checkbox, Input, Select, Button } from 'antd';
 function MyForm(props) {
-    const { form, config, handleSubmit = () => { } } = props;
+    const { form, config, } = props;
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        props.form.validateFields((err, values) => {
+            debugger
+            if (!err) {
+                console.log('Received values of form: ', values);
+            }
+        });
+    }
     const { getFieldDecorator } = form;
     const list = config.map((item, i) => {
         const { prop, value, type, component, des } = item;
@@ -20,6 +29,7 @@ function MyForm(props) {
                     {...formItemLayout}
                     label={prop}
                     help={des}
+                    key={`item${i}`}
                 >
                     {getFieldDecorator(prop, {
                         initialValue: value,
@@ -32,6 +42,7 @@ function MyForm(props) {
                     {...formItemLayout}
                     label={prop}
                     help={des}
+                    key={`item${i}`}
                 >
                     {getFieldDecorator(prop, {
                         initialValue: value,
@@ -45,9 +56,10 @@ function MyForm(props) {
                     {...formItemLayout}
                     label={prop}
                     help={des}
+                    key={`item${i}`}
                 >
                     {getFieldDecorator(prop, {
-                        initialValue: value[0],
+                        // initialValue: value[0],
                     })(
                         <Select>
                             {value.map((item, i) => <Select.Option value={item} key={i}>{item}</Select.Option>)}
