@@ -4,9 +4,8 @@
  */
 import getType from './type';
 export default (props) => {
-    const { series, data: { rows }, type, seriesLayoutBy, showY2, Y2Series } = props;
+    const { series, data: { rows }, type, seriesLayoutBy, showY2, Y2Series, stack, showLabel, labelPosition } = props;
     const setting = type.toLowerCase() === 'area' ? {
-        stack: '总量',
         areaStyle: {},
     } : {};
     const _series = rows.map((item, i) => {
@@ -15,8 +14,15 @@ export default (props) => {
         } else {
             return {
                 type: getType(type),
+                stack: stack === true ? '总量' : null,
                 ...setting,
-                seriesLayoutBy
+                seriesLayoutBy,
+                label: {
+                    normal: {
+                        show: showLabel,
+                        position: labelPosition
+                    }
+                }
             };
         }
     })

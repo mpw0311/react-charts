@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Row, Col, Card } from 'antd';
-import { isArray, isEqual } from 'lodash';
+import { isArray, isObject } from 'lodash';
 import ChartTab from './tab';
 
 export default class View extends PureComponent {
@@ -11,15 +11,24 @@ export default class View extends PureComponent {
     }
     static getDerivedStateFromProps(nextProps, prevState) {
         if (prevState.data === undefined) {
-            return { data: nextProps.data };
+            const chartProps = {};
+            nextProps.config.forEach(item => {
+                const { prop, value } = item;
+                chartProps[prop] = isArray(value) ? value[0] : isObject(value) ? null : value;
+            });
+            return {
+                data: nextProps.data,
+                ...chartProps
+            };
         } else {
             return prevState;
         }
     }
     render() {
-        const { title, data, config, rows } = this.state;
 
+        const { data, ...chartProps } = this.state;
         debugger
+        const { title, config, rows } = this.props;
         const handleBlur = (data) => {
             this.setState({
                 data
@@ -27,14 +36,25 @@ export default class View extends PureComponent {
         };
         const children = isArray(this.props.children) ?
             this.props.children.map((o, i) => {
-                return React.cloneElement(o, { data })
+                return React.cloneElement(o, { data, ...chartProps })
             }) :
-            React.cloneElement(this.props.children, { data });
+            React.cloneElement(this.props.children, { data, ...chartProps });
+        const handleChange = (prop) => {
+            this.setState({
+                prop
+            });
+        }
         return (
             <Card title={title} bordered={false} bodyStyle={{ padding: '0 10px' }}>
                 <Row gutter={16}>
                     <Col span={10}>
-                        <ChartTab data={data} onBlur={handleBlur} rows={rows} />
+                        <ChartTab
+                            data={data}
+                            onBlur={handleBlur}
+                            rows={rows}
+                            config={config}
+                            handleChange={handleChange}
+                        />
                     </Col>
                     <Col span={14}>
                         {children}

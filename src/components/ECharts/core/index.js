@@ -30,7 +30,14 @@ export default class Chart extends PureComponent {
             <ReactEcharts
                 {...chartConfig}
                 {...rest}
-                style={{ width: '100%', height: '100%', minHeight: '300px', overflow: 'hidden', ...style }}
+                style={{
+                    width: '100%',
+                    textAlign: 'left',
+                    height: '100%',
+                    minHeight: '300px',
+                    overflow: 'hidden',
+                    ...style
+                }}
                 theme={theme}
                 ref={(e) => {
                     this.echarts_react = e;

@@ -7,6 +7,8 @@ export default (type) => {
     switch (_type) {
         case 'area':
             return 'line';
+        case 'bar-y':
+            return 'bar';
         default:
             return type;
     }
