@@ -37,6 +37,9 @@ class BasicChart extends PureComponent {
         toolboxMagicType: ['line', 'bar'],
         showToolboxRestore: true,
         showToolboxSaveAsImage: false,
+        stack: false,
+        showLabel: false,
+        labelPosition: 'insideTop'
     }
     render() {
         const { data } = this.props;
@@ -115,4 +118,10 @@ BasicChart.propTypes = {
     showToolboxRestore: PropTypes.bool,
     //保存为图片
     showToolboxSaveAsImage: PropTypes.bool,
+    //系列列表堆叠
+    stack: PropTypes.bool,
+    //系列列表文本标签
+    showLabel: PropTypes.bool,
+    //系列列表文本标签的显示位置
+    labelPosition: PropTypes.oneOf(['top', 'left', 'right', 'bottom', 'inside', 'insideLeft', 'insideRight', 'insideTop', 'insideBottom', 'insideTopLeft', 'insideBottomLeft', 'insideTopRight', 'insideBottomRight']),
 };

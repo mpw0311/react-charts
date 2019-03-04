@@ -1,6 +1,6 @@
 import styles from './index.css';
 import { formatMessage } from 'umi-plugin-locale';
-import { Line, Bar, Area } from '@components/Echarts';
+import { Line, Bar, Area, YBar } from '@components/Echarts';
 import View from '@components/Echarts/view';
 
 export default function () {
@@ -65,7 +65,8 @@ export default function () {
       </ul>
       <Line data={d} showToolbox showY2 showY2SplitLine />
       <Area data={d} />
-      <Bar data={d} />
+      <Bar data={d} showLabel/>
+      <YBar data={d} />
       <View />
     </div>
   );
