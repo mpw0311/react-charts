@@ -100,7 +100,7 @@ export default function () {
       <Area data={d} />
       <Bar data={d} showLabel />
       <YBar data={d} />
-      <Funnel data={funneldata} />
+      <Funnel data={funneldata} height={500} />
       <View />
     </div>
   );

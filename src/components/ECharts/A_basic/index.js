@@ -15,6 +15,7 @@ import getYAxis from './yAxis';
 import getSeries from './series';
 class BasicChart extends PureComponent {
     static defaultProps = {
+        height: '100%',
         data: {},
         type: 'line',
         loading: false,
@@ -42,9 +43,21 @@ class BasicChart extends PureComponent {
         labelPosition: 'insideTop'
     }
     render() {
-        const { data } = this.props;
+        const { data, loading, height } = this.props;
         if (!_isData(data)) {
-            return (<div>无数据</div>);
+            return (
+                <div style={{
+                    width: '100%',
+                    height,
+                    color: '#555',
+                    fontSize: 16,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+                    <span >无数据</span>
+                </div>
+            );
         }
         const option = {
             tooltip: getTooltip(this.props),
@@ -57,7 +70,9 @@ class BasicChart extends PureComponent {
         }
         return (
             <Chart
+                height={height}
                 option={option}
+                showLoading={loading}
             />
         );
     }
@@ -66,7 +81,7 @@ export default BasicChart;
 
 BasicChart.propTypes = {
     //支持的图形类型
-    type: PropTypes.oneOf(['line', 'area', 'bar','bar-y']),
+    type: PropTypes.oneOf(['line', 'area', 'bar', 'bar-y']),
     //数据格式校验
     data: PropTypes.shape({
         columns: PropTypes.array,
