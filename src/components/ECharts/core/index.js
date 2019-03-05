@@ -1,3 +1,7 @@
+/**
+ * author：M
+ * E-mail: mpw0311@163.com
+ */
 import { PureComponent } from 'react';
 import ReactEcharts from 'echarts-for-react';
 import PropTypes from 'prop-types';
