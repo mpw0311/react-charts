@@ -1,6 +1,6 @@
 import styles from './index.css';
 import { formatMessage } from 'umi-plugin-locale';
-import { Line, Bar, Area, YBar } from '@components/Echarts';
+import { Line, Bar, Area, YBar, Funnel } from '@components/Echarts';
 import View from '@components/Echarts/view';
 
 export default function () {
@@ -54,6 +54,39 @@ export default function () {
       },
     ]
   };
+  const funneldata = {
+    columns: [
+      {
+        field: "name",
+        name: "分类",
+        type: "string"
+      },
+      {
+        field: "value",
+        name: "2015",
+        type: "number"
+      },
+    ],
+    rows: [
+      {
+        "name": 'Matcha Latte',
+        "value": 43.3,
+      },
+      {
+        "name": 'Milk Tea',
+        "value": 83.1,
+      },
+      {
+        "name": 'Cheese Cocoa',
+        "value": 86.4,
+      },
+      {
+        "name": 'Walnut Brownie',
+        "value": 72.4,
+      },
+    ]
+
+  }
   return (
     <div className={styles.normal}>
       <ul className={styles.list}>
@@ -65,8 +98,9 @@ export default function () {
       </ul>
       <Line data={d} showToolbox showY2 showY2SplitLine />
       <Area data={d} />
-      <Bar data={d} showLabel/>
+      <Bar data={d} showLabel />
       <YBar data={d} />
+      <Funnel data={funneldata} />
       <View />
     </div>
   );

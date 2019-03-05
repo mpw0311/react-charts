@@ -7,7 +7,7 @@
  * @returns {string} 
  */
 export default (num, limit = 1000) => {
-    if (typeof num !== 'number' || typeof num !== 'string') return num;
+    if (typeof num !== 'number' && typeof num !== 'string') return num;
     num += "";
     if (num === "NaN") return num;
     const n = num.indexOf('.');

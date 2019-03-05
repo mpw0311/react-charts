@@ -53,7 +53,6 @@ import isEqual from 'lodash/isEqual';
     ]
  }
  *
- *
  * @param {*} data
  * [
         ['product', '2015', '2016', '2017'],
