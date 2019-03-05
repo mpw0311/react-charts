@@ -5,7 +5,7 @@ import isEqual from 'lodash/isEqual';
  * {
     columns: [
         {
-            field: "category",
+            field: "product",
             name: "分类",
             type: "string"
         },
