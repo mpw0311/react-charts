@@ -1,6 +1,6 @@
 import styles from './index.css';
 import { formatMessage } from 'umi-plugin-locale';
-import { Line, Bar, Area, YBar, Funnel } from '@components/Echarts';
+import { Line, Bar, Area, YBar, Funnel,Pie } from '@components/Echarts';
 // import View from '@components/Echarts/view';
 
 export default function () {
@@ -99,8 +99,10 @@ export default function () {
       <Line data={d} showToolbox showY2 showY2SplitLine />
       <Area data={d} />
       <Bar data={d} showLabel />
+      <Bar data={d} stack />
       <YBar data={d} />
-      <Funnel data={funneldata} height={500} />
+      <Funnel data={funneldata} height={400} />
+      <Pie data={funneldata} height={400}/>
       {/* <View /> */}
     </div>
   );

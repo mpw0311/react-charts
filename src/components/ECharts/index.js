@@ -12,6 +12,7 @@ const Bar = getComponent(React.lazy(() => import('./charts/Bar')));
 const YBar = getComponent(React.lazy(() => import('./charts/Bar-y')));
 const Line = getComponent(React.lazy(() => import('./charts/Line')));
 const Funnel = getComponent(React.lazy(() => import('./charts/Funnel')));
+const Pie = getComponent(React.lazy(() => import('./charts/Pie')));
 
 export {
     Area,
@@ -20,6 +21,7 @@ export {
     // BarWaterfall,
     Line,
     Funnel,
+    Pie,
     // Map,
     // Pie,
     // PieCustom,

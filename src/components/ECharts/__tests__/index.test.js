@@ -6,6 +6,7 @@ import YBar from '../charts/Bar-y';
 import Line from '../charts/Line';
 import Area from '../charts/Area';
 import Funnel from '../charts/Funnel';
+import Pie from '../charts/Pie';
 
 
 describe('Layout: Echars', () => {
@@ -101,6 +102,17 @@ describe('Layout: Echars', () => {
   test('Render Funnel', () => {
     const component = mount(<Funnel data={data} height={300} />);
     expect(component.exists()).toBe(true);
+    expect(component.find('.echarts-for-react').length).toBe(1);
+    expect(component.getDOMNode().style.height).toBe('300px');
+    expect(component.props().type.toLowerCase()).toBe('funnel');
+    // expect(component.find('canvas').length).toBe(1);
+  });
+  test('Render Pie', () => {
+    const component = mount(<Pie data={data} height={300} />);
+    expect(component.exists()).toBe(true);
+    expect(component.find('.echarts-for-react').length).toBe(1);
+    expect(component.getDOMNode().style.height).toBe('300px');
+    expect(component.props().type.toLowerCase()).toBe('pie');
     // expect(component.find('canvas').length).toBe(1);
   });
 });
