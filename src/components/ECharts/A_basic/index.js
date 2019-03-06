@@ -23,6 +23,7 @@ class BasicChart extends PureComponent {
         axisPointer: 'shadow',
         showLegend: true,
         seriesLayoutBy: 'row',
+        seriesSettings: {},
         showY2: false,
         Y2Series: [
             {
@@ -35,7 +36,7 @@ class BasicChart extends PureComponent {
         showToolboxDataZoom: false,
         showToolboxDataView: false,
         showToolboxMagicType: true,
-        toolboxMagicType: ['line', 'bar'],
+        toolboxMagicType: ['line', 'bar', 'stack', 'tiled'],
         showToolboxRestore: true,
         showToolboxSaveAsImage: false,
         stack: false,
@@ -107,6 +108,8 @@ BasicChart.propTypes = {
     yAxis: PropTypes.object,
     //图形系列(series)配置项
     series: PropTypes.object,
+    //单个图形系列(series[i])配置项
+    seriesSettings: PropTypes.object,
     //指定 dataset 的列（column）还是行（row）映射为图形系列（series）
     seriesLayoutBy: PropTypes.oneOf(['column', 'row']),
     //y轴单位
@@ -127,7 +130,7 @@ BasicChart.propTypes = {
     showToolboxDataView: PropTypes.bool,
     //是否图形切换
     showToolboxMagicType: PropTypes.bool,
-    //图形切换类型
+    //图形切换类型['stack', 'tiled']或['line','bar']或['line','bar','stack', 'tiled']
     toolboxMagicType: PropTypes.array,
     //刷新还原
     showToolboxRestore: PropTypes.bool,

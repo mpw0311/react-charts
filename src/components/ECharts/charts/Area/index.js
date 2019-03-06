@@ -9,7 +9,10 @@ class Index extends PureComponent {
         data: {},
         type: 'line',
         loading: false,
-        stack:true
+        stack:true,
+        seriesSettings: {
+            areaStyle: {},
+        },
     }
     render() {
 
