@@ -1,6 +1,8 @@
 /**
- * author：M
- * E-mail: mpw0311@163.com
+ * @author：M
+ * @E-mail: mpw0311@163.com
+ * @version: 1.0.0
+ * @description： 
  */
 import { PureComponent } from 'react';
 import ReactEcharts from 'echarts-for-react';
@@ -28,7 +30,7 @@ export default class Chart extends PureComponent {
         });
     }
     render() {
-        const { style, theme = 'light', height, ...rest } = this.props;
+        const { style, height, ...rest } = this.props;
         return (
             // <Context.Consumer>
             //     {({ theme }) => (
@@ -40,10 +42,9 @@ export default class Chart extends PureComponent {
                     textAlign: 'left',
                     height,
                     minHeight: '300px',
-                    overflow: 'hidden',
                     ...style
                 }}
-                theme={theme}
+                // theme={theme}
                 ref={(e) => {
                     this.echarts_react = e;
                 }}

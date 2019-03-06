@@ -1,6 +1,8 @@
 /**
- * author：M
- * E-mail: mpw0311@163.com
+ * @author：M
+ * @E-mail: mpw0311@163.com
+ * @version: 1.0.0
+ * @description： 
  */
 import { PureComponent } from 'react';
 import Chart from '../core';
@@ -13,6 +15,7 @@ import getDataset from './dataset';
 import getXAxis from './xAxis';
 import getYAxis from './yAxis';
 import getSeries from './series';
+import getGrid from './grid';
 class BasicChart extends PureComponent {
     static defaultProps = {
         height: '100%',
@@ -44,7 +47,7 @@ class BasicChart extends PureComponent {
         labelPosition: 'insideTop'
     }
     render() {
-        const { data, loading, height } = this.props;
+        const { data, loading, height, style, onChartReady, onEvents } = this.props;
         if (!_isData(data)) {
             return (
                 <div style={{
@@ -54,7 +57,8 @@ class BasicChart extends PureComponent {
                     fontSize: 16,
                     display: 'flex',
                     justifyContent: 'center',
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    ...style
                 }}>
                     <span >无数据</span>
                 </div>
@@ -67,13 +71,17 @@ class BasicChart extends PureComponent {
             dataset: getDataset(this.props),
             xAxis: getXAxis(this.props),
             yAxis: getYAxis(this.props),
+            grid: getGrid(this.props),
             series: getSeries(this.props)
         }
         return (
             <Chart
                 height={height}
+                style={style}
                 option={option}
                 showLoading={loading}
+                onChartReady={onChartReady}
+                onEvents={onEvents}
             />
         );
     }
@@ -81,6 +89,8 @@ class BasicChart extends PureComponent {
 export default BasicChart;
 
 BasicChart.propTypes = {
+    //调色盘颜色列表
+    color: PropTypes.array,
     //支持的图形类型
     type: PropTypes.oneOf(['line', 'area', 'bar', 'bar-y']),
     //数据格式校验
@@ -88,6 +98,8 @@ BasicChart.propTypes = {
         columns: PropTypes.array,
         rows: PropTypes.array,
     }),
+    //echart组件div样式
+    style: PropTypes.object,
     //是否显示正在加载中
     loading: PropTypes.bool,
     //图形标题
@@ -102,6 +114,8 @@ BasicChart.propTypes = {
     legend: PropTypes.object,
     //是否显示图例
     showLegend: PropTypes.bool,
+    //直角坐标系内绘图网格配置
+    grid: PropTypes.object,
     //x轴配置
     xAxis: PropTypes.object,
     //y轴配置
@@ -142,4 +156,8 @@ BasicChart.propTypes = {
     showLabel: PropTypes.bool,
     //系列列表文本标签的显示位置
     labelPosition: PropTypes.oneOf(['top', 'left', 'right', 'bottom', 'inside', 'insideLeft', 'insideRight', 'insideTop', 'insideBottom', 'insideTopLeft', 'insideBottomLeft', 'insideTopRight', 'insideBottomRight']),
+    //when the chart is ready, will callback the function with the echarts object as it's paramter.
+    onChartReady: PropTypes.func,
+    //binding the echarts event, will callback with the echarts event object, and the echart object as it's paramters
+    onEvents: PropTypes.object,
 };
