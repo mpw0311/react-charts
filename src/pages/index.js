@@ -1,7 +1,7 @@
 import styles from './index.css';
 import { formatMessage } from 'umi-plugin-locale';
 import { Line, Bar, Area, YBar, Funnel } from '@components/Echarts';
-import View from '@components/Echarts/view';
+// import View from '@components/Echarts/view';
 
 export default function () {
   const d = {
@@ -101,7 +101,7 @@ export default function () {
       <Bar data={d} showLabel />
       <YBar data={d} />
       <Funnel data={funneldata} height={500} />
-      <View />
+      {/* <View /> */}
     </div>
   );
 }

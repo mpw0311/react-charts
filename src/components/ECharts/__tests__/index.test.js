@@ -1,6 +1,13 @@
-import { Bar, Line, Area, Funnel,YBar } from '../index';
-import renderer from 'react-test-renderer';
+// import { Bar, Line, Area, Funnel, YBar } from '../index';
+// import renderer from 'reFunnelact-test-renderer';
 import { mount } from 'enzyme';
+import Bar from '../charts/Bar';
+import YBar from '../charts/Bar-y';
+import Line from '../charts/Line';
+import Area from '../charts/Area';
+import Funnel from '../charts/Funnel';
+
+
 describe('Layout: Echars', () => {
   const data = {
     columns: [
@@ -59,7 +66,13 @@ describe('Layout: Echars', () => {
     expect(component.getDOMNode().style.height).toBe('300px');
     expect(component.props().loading).toBe(false);
     expect(component.props().type.toLowerCase()).toBe('bar');
-    // expect(component.find('canvas').length).toBe(1);
+  });
+  test('Render Bar', () => {
+    const component = mount(<Bar height={300} />);
+    expect(component.exists()).toBe(true);
+    expect(component.getDOMNode().style.height).toBe('300px');
+    expect(component.props().loading).toBe(false);
+    expect(component.props().type.toLowerCase()).toBe('bar');
   });
   test('Render Area', () => {
     const component = mount(<Area data={data} height={300} bindResize />);

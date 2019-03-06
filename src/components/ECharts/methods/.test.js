@@ -1,4 +1,4 @@
-import { _formatNumer, _isData, _toDataset } from '..';
+import { _formatNumer, _isData, _toDataset } from './index';
 // import renderer from 'react-test-renderer';
 
 describe('methods', () => {
