@@ -29,8 +29,8 @@ export default (props) => {
     if (showY2 === true) {
         Y2Series.forEach(item => {
             const { type, index } = item;
-            _series[index] = { ..._series[index], type, yAxisIndex: 1 }
+            _series[index] = { ..._series[index], type, yAxisIndex: 1 };
         });
     }
     return series || _series;
-}
+};

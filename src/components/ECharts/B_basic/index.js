@@ -55,7 +55,7 @@ class BasicChart extends PureComponent {
             legend: getLegend(this.props),
             dataset: getDataset(this.props),
             series: getSeries(this.props)
-        }
+        };
         return (
             <Chart
                 height={height}

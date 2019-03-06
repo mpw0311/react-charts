@@ -11,4 +11,4 @@ export default (props) => {
         type: 'category',
         ...xAxis
     };
-}
+};

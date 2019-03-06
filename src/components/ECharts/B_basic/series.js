@@ -22,4 +22,4 @@ export default (props) => {
         .filter(item => item !== undefined);
 
     return series || _series;
-}
+};

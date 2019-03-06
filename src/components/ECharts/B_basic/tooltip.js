@@ -10,4 +10,4 @@ export default (props) => {
         shadow: showTooltip,
         ...tooltip
     };
-}
+};

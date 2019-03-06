@@ -79,4 +79,4 @@ Chart.propTypes = {
     onEvents: PropTypes.object,
     //the opts of echarts. object, will be used when initial echarts instance by echarts.init. Document here.
     opts: PropTypes.object,
-}
+};

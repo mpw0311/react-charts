@@ -14,4 +14,4 @@ export default (type) => {
         default:
             return type;
     }
-}
+};
