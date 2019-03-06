@@ -121,7 +121,10 @@ BasicChart.propTypes = {
     //y轴配置
     yAxis: PropTypes.object,
     //图形系列(series)配置项
-    series: PropTypes.object,
+    series: PropTypes.oneOfType([
+        PropTypes.array,
+        PropTypes.object,
+    ]),
     //单个图形系列(series[i])配置项
     seriesSettings: PropTypes.object,
     //指定 dataset 的列（column）还是行（row）映射为图形系列（series）

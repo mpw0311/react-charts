@@ -6,9 +6,13 @@
  */
 import { _toDataset } from '../methods';
 export default (props) => {
-    const { data } = props;
-    const source =  _toDataset(data);
-    return {
-        source
-    };
+    const { data, dataType } = props;
+    if (dataType === 'dataset') {
+        const source = _toDataset(data);
+        return {
+            source
+        };
+    } else {
+        return null;
+    }
 };

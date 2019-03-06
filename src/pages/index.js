@@ -1,6 +1,6 @@
 import styles from './index.css';
 import { formatMessage } from 'umi-plugin-locale';
-import { Line, Bar, Area, YBar, Funnel, Pie } from '@components/Echarts';
+import { Line, Bar, Area, YBar, Funnel, Pie, Sankey } from '@components/Echarts';
 // import View from '@components/Echarts/view';
 
 export default function () {
@@ -86,7 +86,47 @@ export default function () {
       },
     ]
 
-  }
+  };
+  const Sankeydata = {
+    nodes: [{
+      name: 'a'
+    }, {
+      name: 'b'
+    }, {
+      name: 'a1'
+    }, {
+      name: 'a2'
+    }, {
+      name: 'b1'
+    }, {
+      name: 'c'
+    }],
+    links: [{
+      source: 'a',
+      target: 'a1',
+      value: 5
+    }, {
+      source: 'a',
+      target: 'a2',
+      value: 3
+    }, {
+      source: 'b',
+      target: 'b1',
+      value: 8
+    }, {
+      source: 'a',
+      target: 'b1',
+      value: 3
+    }, {
+      source: 'b1',
+      target: 'a1',
+      value: 1
+    }, {
+      source: 'b1',
+      target: 'c',
+      value: 2
+    }]
+  };
   return (
     <div className={styles.normal}>
       <ul className={styles.list}>
@@ -103,6 +143,7 @@ export default function () {
       <YBar data={d} />
       <Funnel data={funneldata} height={400} />
       <Pie data={funneldata} height={400} />
+      <Sankey data={Sankeydata} height={400} />
       {/* <View /> */}
     </div>
   );
