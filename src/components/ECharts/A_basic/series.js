@@ -1,13 +1,12 @@
 /**
- * author：M
- * E-mail: mpw0311@163.com
+ * @author：M
+ * @E-mail: mpw0311@163.com
+ * @version: 1.0.0
+ * @description： 
  */
 import getType from './type';
 export default (props) => {
-    const { series, data: { rows }, type, seriesLayoutBy, showY2, Y2Series, stack, showLabel, labelPosition } = props;
-    const setting = type.toLowerCase() === 'area' ? {
-        areaStyle: {},
-    } : {};
+    const { series, data: { rows }, type, seriesLayoutBy, seriesSettings, showY2, Y2Series, stack, showLabel, labelPosition } = props;
     const _series = rows.map((item, i) => {
         if (i === 0) {
             return undefined;
@@ -15,7 +14,7 @@ export default (props) => {
             return {
                 type: getType(type),
                 stack: stack === true ? '总量' : null,
-                ...setting,
+                ...seriesSettings,
                 seriesLayoutBy,
                 label: {
                     normal: {

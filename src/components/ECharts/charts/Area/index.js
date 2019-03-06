@@ -1,6 +1,8 @@
 /**
- * author：M
- * E-mail: mpw0311@163.com
+ * @author：M
+ * @E-mail: mpw0311@163.com
+ * @version: 1.0.0
+ * @description： 
  */
 import { PureComponent } from 'react';
 import Chart from '../../A_basic';
@@ -9,7 +11,10 @@ class Index extends PureComponent {
         data: {},
         type: 'line',
         loading: false,
-        stack:true
+        stack:true,
+        seriesSettings: {
+            areaStyle: {},
+        },
     }
     render() {
 

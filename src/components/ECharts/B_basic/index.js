@@ -1,6 +1,8 @@
 /**
- * author：M
- * E-mail: mpw0311@163.com
+ * @author：M
+ * @E-mail: mpw0311@163.com
+ * @version: 1.0.0
+ * @description： 
  */
 import { PureComponent } from 'react';
 import Chart from '../core';
@@ -30,7 +32,7 @@ class BasicChart extends PureComponent {
         sort: 'none',
     }
     render() {
-        const { data, loading, height } = this.props;
+        const { data, loading, style, height, onChartReady, onEvents } = this.props;
         if (!_isData(data)) {
             return (
                 <div style={{
@@ -40,7 +42,8 @@ class BasicChart extends PureComponent {
                     fontSize: 16,
                     display: 'flex',
                     justifyContent: 'center',
-                    alignItems: 'center'
+                    alignItems: 'center',
+                    ...style
                 }}>
                     <span >无数据</span>
                 </div>
@@ -56,8 +59,11 @@ class BasicChart extends PureComponent {
         return (
             <Chart
                 height={height}
+                style={style}
                 option={option}
                 showLoading={loading}
+                onChartReady={onChartReady}
+                onEvents={onEvents}
             />
         );
     }
@@ -72,6 +78,8 @@ BasicChart.propTypes = {
         columns: PropTypes.array,
         rows: PropTypes.array,
     }),
+    //echart组件div样式
+    style: PropTypes.object,
     //是否显示正在加载中
     loading: PropTypes.bool,
     //图形标题
@@ -107,5 +115,9 @@ BasicChart.propTypes = {
     //漏斗图数据排序
     sort: PropTypes.oneOf(['ascending', 'descending', 'none']),
     //图形系列(series)name
-    seriesName: PropTypes.string
+    seriesName: PropTypes.string,
+    //when the chart is ready, will callback the function with the echarts object as it's paramter.
+    onChartReady: PropTypes.func,
+    //binding the echarts event, will callback with the echarts event object, and the echart object as it's paramters
+    onEvents: PropTypes.object,
 };
