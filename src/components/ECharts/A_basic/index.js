@@ -73,7 +73,8 @@ class BasicChart extends PureComponent {
             yAxis: getYAxis(this.props),
             grid: getGrid(this.props),
             series: getSeries(this.props)
-        }
+            
+        };
         return (
             <Chart
                 height={height}
