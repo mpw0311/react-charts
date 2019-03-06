@@ -9,16 +9,14 @@ class Index extends PureComponent {
     data: {},
     type: 'funnel',
     loading: false,
+    showLegend: false,
     tooltip: {},
     sort: 'descending',
     seriesSettings: {
-      name: '漏斗图',
       left: '10%',
-      top: 60,
-      //x2: 80,
-      bottom: 60,
+      top: 10,
+      bottom: 10,
       width: '80%',
-      // height: {totalHeight} - y - y2,
       // min: 0,
       // max: 100,
       // minSize: '0%',
@@ -35,10 +33,10 @@ class Index extends PureComponent {
           type: 'solid'
         }
       },
-      // itemStyle: {
-      // borderColor: '#fff',
-      // borderWidth: 1/
-      // },
+      itemStyle: {
+        borderColor: '#fff',
+        borderWidth: 1 
+      },
       emphasis: {
         label: {
           show: true,

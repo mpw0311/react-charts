@@ -1,5 +1,4 @@
 
-
 /**
  * 数字加逗号显示
  * @param {number} number

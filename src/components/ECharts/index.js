@@ -1,16 +1,18 @@
-import Area from './charts/Area';
-import Bar from './charts/Bar';
-import YBar from './charts/Bar-y';
-// import BarWaterfall from './charts/Bar-waterfall';
-import Line from './charts/Line';
-import Funnel from './charts/Funnel';
-// import Map from './charts/Map';
-// import Pie from './charts/Pie';
-// import PieCustom from './charts/Pie-custom';
-// import PieNest from './charts/Pie-nest';
-// import Radar from './charts/Radar';
-// import Sankey from './charts/Sankey';
-// import Scatter from './charts/Scatter';
+import React, { Suspense } from 'react';
+import { Skeleton } from 'antd';
+
+const getComponent = Component => props => (
+    <Suspense fallback={<Skeleton title={false} active/>}>
+        <Component {...props} />
+    </Suspense>
+);
+
+const Area = getComponent(React.lazy(() => import('./charts/Area')));
+const Bar = getComponent(React.lazy(() => import('./charts/Bar')));
+const YBar = getComponent(React.lazy(() => import('./charts/Bar-y')));
+const Line = getComponent(React.lazy(() => import('./charts/Line')));
+const Funnel = getComponent(React.lazy(() => import('./charts/Funnel')));
+const Pie = getComponent(React.lazy(() => import('./charts/Pie')));
 
 export {
     Area,
@@ -19,6 +21,7 @@ export {
     // BarWaterfall,
     Line,
     Funnel,
+    Pie,
     // Map,
     // Pie,
     // PieCustom,

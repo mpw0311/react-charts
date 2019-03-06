@@ -13,6 +13,7 @@ import getDataset from './dataset';
 import getSeries from './series';
 class BasicChart extends PureComponent {
     static defaultProps = {
+        height: '100%',
         data: {},
         type: 'funnel',
         loading: false,
@@ -26,13 +27,24 @@ class BasicChart extends PureComponent {
         showToolboxRestore: true,
         showToolboxSaveAsImage: false,
         seriesSettings: {},
-        sort: 'none'
-
+        sort: 'none',
     }
     render() {
-        const { data } = this.props;
+        const { data, loading, height } = this.props;
         if (!_isData(data)) {
-            return (<div>无数据</div>);
+            return (
+                <div style={{
+                    width: '100%',
+                    height,
+                    color: '#555',
+                    fontSize: 16,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center'
+                }}>
+                    <span >无数据</span>
+                </div>
+            );
         }
         const option = {
             tooltip: getTooltip(this.props),
@@ -43,7 +55,9 @@ class BasicChart extends PureComponent {
         }
         return (
             <Chart
+                height={height}
                 option={option}
+                showLoading={loading}
             />
         );
     }
@@ -52,7 +66,7 @@ export default BasicChart;
 
 BasicChart.propTypes = {
     //支持的图形类型
-    type: PropTypes.oneOf(['funnel']),
+    type: PropTypes.oneOf(['funnel', 'pie']),
     //数据格式校验
     data: PropTypes.shape({
         columns: PropTypes.array,
@@ -92,4 +106,6 @@ BasicChart.propTypes = {
     seriesSettings: PropTypes.object,
     //漏斗图数据排序
     sort: PropTypes.oneOf(['ascending', 'descending', 'none']),
+    //图形系列(series)name
+    seriesName: PropTypes.string
 };

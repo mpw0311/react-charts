@@ -7,7 +7,7 @@ import Chart from '../../A_basic';
 class Index extends PureComponent {
     static defaultProps = {
         data: {},
-        type: 'bar-y',
+        type: 'bar',
         loading: false,
         xAxis: {
             type: 'value',
