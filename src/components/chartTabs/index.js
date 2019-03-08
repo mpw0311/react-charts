@@ -1,8 +1,8 @@
 import { Line, Bar, Area, YBar, Funnel, Pie, Sankey } from '../Echarts';
 import ChartTabs from './tabPane';
-import data from './data01.json';
-import funneldata from './data02.json';
-import Sankeydata from './data03.json';
+import data from './data/data01.json';
+import funneldata from './data/data02.json';
+import Sankeydata from './data/data03.json';
 export default function () {
     return (
         <ChartTabs>

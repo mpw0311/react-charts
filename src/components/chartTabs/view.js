@@ -27,15 +27,20 @@ export default class PageMenu extends PureComponent {
                 data
             });
         };
+        const handleChange = (values) => {
+            this.setState({
+                ...values
+            });
+        };
         return (
             <div>
 
                 <Row gutter={16}>
                     <Col span={10}>
-                        <Option data={data} onBlur={handleBlur} />
+                        <Option data={data} onBlur={handleBlur} onChange={handleChange} />
                     </Col>
                     <Col span={14}>
-                        {cloneElement(children, { data })}
+                        {cloneElement(children, { ...this.state })}
                         {JSON.stringify(data)}
                     </Col>
                 </Row>
