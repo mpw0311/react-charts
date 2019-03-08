@@ -1,8 +1,8 @@
 /**
- * @author：M
- * @E-mail: mpw0311@163.com
- * @version: 1.0.0
- * @description： 
+ * @author M
+ * @email mpw0311@163.com
+ * @version  1.0.0
+ * @description 
  */
 import React, { Suspense } from 'react';
 import { Skeleton } from 'antd';
