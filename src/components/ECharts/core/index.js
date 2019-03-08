@@ -1,14 +1,14 @@
 /**
- * @author：M
- * @E-mail: mpw0311@163.com
- * @version: 1.0.0
- * @description： 
+ * @author M
+ * @email mpw0311@163.com
+ * @version  1.0.0
+ * @description 
  */
 import { PureComponent } from 'react';
 import ReactEcharts from 'echarts-for-react';
 import PropTypes from 'prop-types';
 // import Context from '@context';
-import chartConfig from '../config/settings';
+import chartConfig from '../config';
 
 let timer = null;
 export default class Chart extends PureComponent {
@@ -79,4 +79,4 @@ Chart.propTypes = {
     onEvents: PropTypes.object,
     //the opts of echarts. object, will be used when initial echarts instance by echarts.init. Document here.
     opts: PropTypes.object,
-}
+};

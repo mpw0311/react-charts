@@ -1,8 +1,9 @@
 /**
- * @author：M
- * @E-mail: mpw0311@163.com
- * @version: 1.0.0
- * @description： 
+ * @author  M
+ * @email mpw0311@163.com
+ * @version  1.0.0
+ * @description 
+ * @git 
  */
 export default (props) => {
     const { grid } = props;
@@ -10,4 +11,4 @@ export default (props) => {
     return {
         ...grid
     };
-}
+};

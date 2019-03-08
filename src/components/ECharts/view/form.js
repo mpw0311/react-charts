@@ -4,15 +4,15 @@ function MyForm(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
         props.form.validateFields((err, values) => {
-            debugger
+            debugger;
             if (!err) {
                 console.log('Received values of form: ', values);
             }
         });
-    }
+    };
     const { getFieldDecorator } = form;
     const list = config.map((item, i) => {
-        const { prop, value, type, component, des } = item;
+        const { prop, value, component, des } = item;
         const formItemLayout = {
             labelCol: {
                 xs: { span: 24 },
