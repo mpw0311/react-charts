@@ -109,8 +109,6 @@ BasicChart.propTypes = {
 
     //是否显示正在加载中
     loading: PropTypes.bool,
-    //图形标题
-    title: PropTypes.string,
     //可以传入tooltip配置，校验
     tooltip: PropTypes.object,
     //是否显示tootip
@@ -136,6 +134,10 @@ BasicChart.propTypes = {
     seriesSettings: PropTypes.object,
     //指定 dataset 的列（column）还是行（row）映射为图形系列（series）
     seriesLayoutBy: PropTypes.oneOf(['column', 'row']),
+    //y轴name
+    YName:PropTypes.string,
+    //y2轴name
+    Y2Name:PropTypes.string,
     //y轴单位
     YUnit: PropTypes.string,
     //是否显示y2轴

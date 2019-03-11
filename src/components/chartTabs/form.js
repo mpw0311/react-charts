@@ -16,7 +16,7 @@ function MyForm(props) {
     const formItemLayout = {
         labelCol: {
             xs: { span: 24 },
-            sm: { span: 5 },
+            sm: { span: 6 },
         },
         wrapperCol: {
             xs: { span: 24 },
@@ -34,6 +34,7 @@ function MyForm(props) {
                     key={`item${i}`}
                 >
                     {getFieldDecorator(name, {
+                        valuePropName: 'checked',
                         initialValue: value,
                     })(
                         <Checkbox > {name} </Checkbox>
@@ -91,35 +92,12 @@ function MyForm(props) {
         <Form onSubmit={handleSubmit} style={{ textAlign: 'left' }}>
             <Collapse accordion>
                 {pannelList()}
-                <Panel header="Legend" key="1">
-                    <Form.Item
-                        {...formItemLayout}
-                    >
-                        {getFieldDecorator('showLegend', {
-                            valuePropName: 'checked',
-                            initialValue: true,
-                        })(
-                            <Checkbox > {'showLegend'} </Checkbox>
-                        )}
-                    </Form.Item>
-                </Panel>
-                <Panel header="Toolbox" key="2">
-                    <Form.Item
-                        {...formItemLayout}
-                    >
-                        {getFieldDecorator('showToolbox', {
-                            initialValue: false,
-                        })(
-                            <Checkbox > {'showToolbox'} </Checkbox>
-                        )}
-                    </Form.Item>
-                </Panel>
-                <Form.Item
-                    wrapperCol={{ span: 12, offset: 5 }}
-                >
-                    <Button type="primary" htmlType="submit"> Submit </Button>
-                </Form.Item>
             </Collapse>
+            <Form.Item
+                wrapperCol={{ span: 12, offset: 5 }}
+            >
+                <Button type="primary" htmlType="submit"> Submit </Button>
+            </Form.Item>
         </Form>
     );
 }

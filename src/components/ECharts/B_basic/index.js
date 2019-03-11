@@ -90,8 +90,6 @@ BasicChart.propTypes = {
     style: PropTypes.object,
     //是否显示正在加载中
     loading: PropTypes.bool,
-    //图形标题
-    title: PropTypes.string,
     //可以传入tooltip配置，校验
     tooltip: PropTypes.object,
     //是否显示tootip
