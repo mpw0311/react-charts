@@ -16,6 +16,7 @@ import getXAxis from './xAxis';
 import getYAxis from './yAxis';
 import getSeries from './series';
 import getGrid from './grid';
+import getTitle from './title';
 class BasicChart extends PureComponent {
     static defaultProps = {
         height: '100%',
@@ -65,6 +66,7 @@ class BasicChart extends PureComponent {
             );
         }
         const option = {
+            title: getTitle(this.props),
             tooltip: getTooltip(this.props),
             toolbox: getToolbox(this.props),
             legend: getLegend(this.props),
@@ -89,6 +91,10 @@ class BasicChart extends PureComponent {
 export default BasicChart;
 
 BasicChart.propTypes = {
+    //组件标题配置项
+    title: PropTypes.object,
+    //组件标题
+    titleText: PropTypes.string,
     //调色盘颜色列表
     color: PropTypes.array,
     //支持的图形类型
@@ -100,6 +106,7 @@ BasicChart.propTypes = {
     }),
     //echart组件div样式
     style: PropTypes.object,
+
     //是否显示正在加载中
     loading: PropTypes.bool,
     //图形标题

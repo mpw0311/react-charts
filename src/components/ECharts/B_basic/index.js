@@ -13,6 +13,7 @@ import getToolbox from './toolbox';
 import getLegend from './legend';
 import getDataset from './dataset';
 import getSeries from './series';
+import getTitle from './title';
 class BasicChart extends PureComponent {
     static defaultProps = {
         height: '100%',
@@ -51,6 +52,7 @@ class BasicChart extends PureComponent {
             );
         }
         const option = {
+            title: getTitle(this.props),
             tooltip: getTooltip(this.props),
             toolbox: getToolbox(this.props),
             legend: getLegend(this.props),
@@ -72,6 +74,10 @@ class BasicChart extends PureComponent {
 export default BasicChart;
 
 BasicChart.propTypes = {
+    //组件标题配置项
+    title: PropTypes.object,
+    //组件标题
+    titleText: PropTypes.string,
     //支持的图形类型
     type: PropTypes.oneOf(['funnel', 'pie', 'sankey']),
     //数据格式校验
