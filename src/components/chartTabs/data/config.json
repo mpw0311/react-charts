@@ -1,17 +1,6 @@
 {
     "basic": [
         {
-            "name": "type",
-            "component": "Select",
-            "type": "array",
-            "value": [
-                "bar",
-                "line",
-                "area"
-            ],
-            "des": "支持的图形类型"
-        },
-        {
             "name": "loading",
             "component": "Checkbox",
             "type": "bool",

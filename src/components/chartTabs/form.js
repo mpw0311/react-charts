@@ -1,5 +1,5 @@
 import { Form, Checkbox, Button, Collapse, Select, Input } from 'antd';
-import config from './config.json';
+import config from '../config.json';
 const Panel = Collapse.Panel;
 function MyForm(props) {
     const { form, onChange } = props;
