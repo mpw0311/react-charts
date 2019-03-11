@@ -65,7 +65,7 @@ function MyForm(props) {
                         initialValue: value[0],
                     })(
                         <Select>
-                            {value.map((item, i) => <Select.Option key={i}>{item}</Select.Option>)}
+                            {value.map((item, i) => <Select.Option key={i} value={item}>{item}</Select.Option>)}
                         </Select>
                     )}
                 </Form.Item>;
