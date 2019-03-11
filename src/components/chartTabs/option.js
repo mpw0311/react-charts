@@ -12,7 +12,7 @@ export default class MyTabs extends PureComponent {
         onChange: () => { },
     }
     render() {
-        const { data, onBlur, onChange, rows, ...rest } = this.props;
+        const { data, onBlur, onChange, rows, type, ...rest } = this.props;
         const handleBlur = (e) => {
             const { value } = e.target;
             const res = value.replace(/｛/g, "{")
@@ -51,7 +51,7 @@ export default class MyTabs extends PureComponent {
         return (
             <Tabs defaultActiveKey="1">
                 <TabPane tab={<span><Icon type="setting" />option</span>} key="1">
-                    <Form onChange={onChange} />
+                    <Form onChange={onChange} type={type} />
                 </TabPane>
                 <TabPane tab={<span><Icon type="bar-chart" />数据</span>} key="2">
                     <TextArea rows={rows} defaultValue={JSON.stringify(data)} onBlur={handleBlur} onKeyDown={tab} className={`${styles.TextArea} scrollbar`} spellCheck="false" {...rest} />

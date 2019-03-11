@@ -1,8 +1,8 @@
 import { Form, Checkbox, Button, Collapse, Select, Input } from 'antd';
-import config from '../config.json';
+import config from './data/config.json';
 const Panel = Collapse.Panel;
 function MyForm(props) {
-    const { form, onChange } = props;
+    const { form, onChange, type } = props;
     const handleSubmit = (e) => {
         e.preventDefault();
         props.form.validateFields((err, values) => {
@@ -73,25 +73,53 @@ function MyForm(props) {
                 return null;
         }
     };
-    const pannelList = () => {
-        const list = [];
-        for (const name in config) {
-            list.push(
-                (<Panel header={name} key={name}>
-                    {
-                        config[name].map((item, i) => {
-                            return getFormItem(item, i);
-                        })
-                    }
-                </Panel>)
-            );
-        }
-        return list;
+    const type_dict = {
+        "A": [
+            'basic',
+            'title',
+            'legend',
+            'grid',
+            'tooltip',
+            'toolbox',
+            'axis',
+            'series'
+        ],
+        "B": [
+            'basic',
+            'title',
+            'legend',
+            'tooltip',
+            'toolbox',
+            'series'
+        ]
     };
+    type_dict[type || 'A'].map(name => {
+        return (
+            <Panel header={name} key={name}>
+                {
+                    config[name].map((item, i) => {
+                        return getFormItem(item, i);
+                    })
+                }
+            </Panel>
+        );
+    });
     return (
         <Form onSubmit={handleSubmit} style={{ textAlign: 'left' }}>
             <Collapse accordion>
-                {pannelList()}
+                {
+                    type_dict[type || 'A'].map(name => {
+                        return (
+                            <Panel header={name} key={name}>
+                                {
+                                    config[name].map((item, i) => {
+                                        return getFormItem(item, i);
+                                    })
+                                }
+                            </Panel>
+                        );
+                    })
+                }
             </Collapse>
             <Form.Item
                 wrapperCol={{ span: 12, offset: 5 }}
