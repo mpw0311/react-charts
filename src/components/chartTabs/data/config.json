@@ -1,6 +1,13 @@
 {
     "basic": [
         {
+            "name": "height",
+            "component": "Input",
+            "type": "string",
+            "value": "300px",
+            "des": "高度"
+        },
+        {
             "name": "loading",
             "component": "Checkbox",
             "type": "bool",
@@ -31,6 +38,60 @@
             "type": "bool",
             "value": true,
             "des": "是否显示图例"
+        },
+        {
+            "name": "legendOrient",
+            "component": "Select",
+            "type": "array",
+            "value": [
+                "horizontal",
+                "vertical"
+            ],
+            "des": "图例列表的布局朝向。"
+        },
+        {
+            "name": "legendLeft",
+            "component": "Select",
+            "type": "array",
+            "value": [
+                "left",
+                "right",
+                "center"
+            ],
+            "des": "图例组件离容器左侧的距离"
+        },
+        {
+            "name": "lengendRight",
+            "component": "Select",
+            "type": "array",
+            "value": [
+                "left",
+                "right",
+                "center"
+            ],
+            "des": "图例组件离容器左侧的距离"
+        },
+        {
+            "name": "legendTop",
+            "component": "Select",
+            "type": "array",
+            "value": [
+                "top",
+                "middle",
+                "bottom"
+            ],
+            "des": "图例组件离容器上侧的距离"
+        },
+        {
+            "name": "legendBottom",
+            "component": "Select",
+            "type": "array",
+            "value": [
+                "top",
+                "middle",
+                "bottom"
+            ],
+            "des": "图例组件离容器下侧的距离"
         }
     ],
     "grid": [],

@@ -41,7 +41,6 @@ export default class PageMenu extends PureComponent {
                     </Col>
                     <Col span={14}>
                         {cloneElement(children, { ...this.state })}
-                        {JSON.stringify(data)}
                     </Col>
                 </Row>
             </div>

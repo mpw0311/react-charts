@@ -96,6 +96,16 @@ BasicChart.propTypes = {
     showTooltip: PropTypes.bool,
     //图形图例配置项
     legend: PropTypes.object,
+    //图例列表的布局朝向。
+    legendOrient: PropTypes.oneOf(['horizontal', 'vertical']),
+    //图例组件离容器左侧的距离。
+    legendLeft: PropTypes.oneOf(['left', 'right', 'center']),
+    //图例组件离容器右侧的距离。
+    legendRight: PropTypes.oneOf(['left', 'right', 'center']),
+    //图例组件离容器上侧的距离。
+    legendTop: PropTypes.oneOf(['top', 'bootom', 'middle']),
+    //图例组件离容器底侧的距离。
+    legendBottom: PropTypes.oneOf(['top', 'bootom', 'middle']),
     //是否显示图例
     showLegend: PropTypes.bool,
     //工具栏配置项

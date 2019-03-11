@@ -7,7 +7,7 @@ const { TabPane } = Tabs;
 const { TextArea } = Input;
 export default class MyTabs extends PureComponent {
     static defaultProps = {
-        rows: 14,
+        rows: 24,
         onBlur: () => { },
         onChange: () => { },
     }
@@ -54,7 +54,7 @@ export default class MyTabs extends PureComponent {
                     <Form onChange={onChange} type={type} />
                 </TabPane>
                 <TabPane tab={<span><Icon type="bar-chart" />数据</span>} key="2">
-                    <TextArea rows={rows} defaultValue={JSON.stringify(data)} onBlur={handleBlur} onKeyDown={tab} className={`${styles.TextArea} scrollbar`} spellCheck="false" {...rest} />
+                    <TextArea rows={rows} defaultValue={JSON.stringify(data, null, 4)} onBlur={handleBlur} onKeyDown={tab} className={`${styles.TextArea} scrollbar`} spellCheck="false" {...rest} />
                 </TabPane>
             </Tabs>
         );
