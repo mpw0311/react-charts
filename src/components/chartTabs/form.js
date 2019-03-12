@@ -93,17 +93,6 @@ function MyForm(props) {
             'series'
         ]
     };
-    type_dict[type || 'A'].map(name => {
-        return (
-            <Panel header={name} key={name}>
-                {
-                    config[name].map((item, i) => {
-                        return getFormItem(item, i);
-                    })
-                }
-            </Panel>
-        );
-    });
     return (
         <Form onSubmit={handleSubmit} style={{ textAlign: 'left' }}>
             <Collapse accordion>

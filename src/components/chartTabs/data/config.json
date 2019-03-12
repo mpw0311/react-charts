@@ -61,17 +61,6 @@
             "des": "图例组件离容器左侧的距离"
         },
         {
-            "name": "lengendRight",
-            "component": "Select",
-            "type": "array",
-            "value": [
-                "left",
-                "right",
-                "center"
-            ],
-            "des": "图例组件离容器左侧的距离"
-        },
-        {
             "name": "legendTop",
             "component": "Select",
             "type": "array",
@@ -81,20 +70,11 @@
                 "bottom"
             ],
             "des": "图例组件离容器上侧的距离"
-        },
-        {
-            "name": "legendBottom",
-            "component": "Select",
-            "type": "array",
-            "value": [
-                "top",
-                "middle",
-                "bottom"
-            ],
-            "des": "图例组件离容器下侧的距离"
         }
     ],
-    "grid": [],
+    "grid": [
+        
+    ],
     "tooltip": [
         {
             "name": "showTooltip",
