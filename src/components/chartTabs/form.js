@@ -1,6 +1,8 @@
-import { Form, Checkbox, Button } from 'antd';
+import { Form, Checkbox, Button, Collapse, Select, Input } from 'antd';
+import config from './data/config.json';
+const Panel = Collapse.Panel;
 function MyForm(props) {
-    const { form, onChange } = props;
+    const { form, onChange, type } = props;
     const handleSubmit = (e) => {
         e.preventDefault();
         props.form.validateFields((err, values) => {
@@ -14,34 +16,111 @@ function MyForm(props) {
     const formItemLayout = {
         labelCol: {
             xs: { span: 24 },
-            sm: { span: 5 },
+            sm: { span: 6 },
         },
         wrapperCol: {
             xs: { span: 24 },
             sm: { span: 12 },
         },
     };
+    const getFormItem = (item, i) => {
+        const { name, component, value, des } = item;
+        switch (component) {
+            case 'Checkbox':
+                return <Form.Item
+                    {...formItemLayout}
+                    label={name}
+                    help={des}
+                    key={`item${i}`}
+                >
+                    {getFieldDecorator(name, {
+                        valuePropName: 'checked',
+                        initialValue: value,
+                    })(
+                        <Checkbox > {name} </Checkbox>
+                    )}
+                </Form.Item>;
+            case "Input":
+                return <Form.Item
+                    {...formItemLayout}
+                    label={name}
+                    help={des}
+                    key={`item${i}`}
+                >
+                    {getFieldDecorator(name, {
+                        initialValue: value,
+                        rules: [{ message: 'Please input your username!' }],
+                    })(
+                        <Input placeholder={name} />
+                    )}
+                </Form.Item>;
+            case "Select":
+                return <Form.Item
+                    {...formItemLayout}
+                    label={name}
+                    help={des}
+                    key={`item${i}`}
+                >
+                    {getFieldDecorator(name, {
+                        initialValue: value[0],
+                    })(
+                        <Select>
+                            {value.map((item, i) => <Select.Option key={i} value={item}>{item}</Select.Option>)}
+                        </Select>
+                    )}
+                </Form.Item>;
+            default:
+                return null;
+        }
+    };
+    const type_dict = {
+        "A": [
+            'basic',
+            'title',
+            'legend',
+            'grid',
+            'tooltip',
+            'toolbox',
+            'axis',
+            'series'
+        ],
+        "B": [
+            'basic',
+            'title',
+            'legend',
+            'tooltip',
+            'toolbox',
+            'series'
+        ]
+    };
+    type_dict[type || 'A'].map(name => {
+        return (
+            <Panel header={name} key={name}>
+                {
+                    config[name].map((item, i) => {
+                        return getFormItem(item, i);
+                    })
+                }
+            </Panel>
+        );
+    });
     return (
         <Form onSubmit={handleSubmit} style={{ textAlign: 'left' }}>
-            <Form.Item
-                {...formItemLayout}
-            >
-                {getFieldDecorator('showLegend', {
-                    valuePropName: 'checked',
-                    initialValue: true,
-                })(
-                    <Checkbox > {'showLegend'} </Checkbox>
-                )}
-            </Form.Item>
-            <Form.Item
-                {...formItemLayout}
-            >
-                {getFieldDecorator('showToolbox', {
-                    initialValue: false,
-                })(
-                    <Checkbox > {'showToolbox'} </Checkbox>
-                )}
-            </Form.Item>
+            <Collapse accordion>
+                {
+                    type_dict[type || 'A'].map(name => {
+                        return (
+                            <Panel header={name} key={name}>
+                                {
+                                    config[name].map((item, i) => {
+                                        return getFormItem(item, i);
+                                    })
+                                }
+                            </Panel>
+                        );
+                    })
+                }
+            </Collapse>
             <Form.Item
                 wrapperCol={{ span: 12, offset: 5 }}
             >

@@ -1,6 +1,5 @@
 import styles from './index.css';
 import { formatMessage } from 'umi-plugin-locale';
-// import View from '@components/Echarts/view';
 import ChartTabs from '@components/chartTabs';
 
 export default function () {
@@ -14,7 +13,6 @@ export default function () {
         </li>
       </ul>
 
-      {/* <View /> */}
       <ChartTabs />
     </div>
   );

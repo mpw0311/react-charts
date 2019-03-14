@@ -20,7 +20,7 @@ export default class PageMenu extends PureComponent {
         }
     }
     render() {
-        const { children } = this.props;
+        const { children, type } = this.props;
         const { data } = this.state;
         const handleBlur = (data) => {
             this.setState({
@@ -37,11 +37,10 @@ export default class PageMenu extends PureComponent {
 
                 <Row gutter={16}>
                     <Col span={10}>
-                        <Option data={data} onBlur={handleBlur} onChange={handleChange} />
+                        <Option type={type} data={data} onBlur={handleBlur} onChange={handleChange} />
                     </Col>
                     <Col span={14}>
                         {cloneElement(children, { ...this.state })}
-                        {JSON.stringify(data)}
                     </Col>
                 </Row>
             </div>

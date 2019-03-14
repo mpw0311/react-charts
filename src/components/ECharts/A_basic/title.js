@@ -5,9 +5,10 @@
  * @description 
  */
 export default (props) => {
-    const { tooltip, showTooltip } = props;
+    const { title, titleText } = props;
+
     return {
-        show: showTooltip,
-        ...tooltip
+        text: titleText,
+        ...title
     };
 };

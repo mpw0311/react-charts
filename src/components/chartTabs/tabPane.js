@@ -14,11 +14,10 @@ export default class PageMenu extends PureComponent {
             >
                 {this.props.children.map((child, i) => {
                     const { props: { config = {} } } = child;
-                    const { name } = config;
-
+                    const { name, basic_type } = config;
                     return (
                         <TabPane tab={name || `Tab${i + 1}`} key={i + 1}>
-                            <View>
+                            <View type={basic_type}>
                                 {child}
                             </View>
                         </TabPane>
