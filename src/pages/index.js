@@ -1,6 +1,6 @@
 import styles from './index.css';
 import { formatMessage } from 'umi-plugin-locale';
-import ChartTabs from '@components/chartTabs';
+import ChartView from '@components/ChartView';
 
 export default function () {
   return (
@@ -13,7 +13,7 @@ export default function () {
         </li>
       </ul>
 
-      <ChartTabs />
+      <ChartView />
     </div>
   );
 }
