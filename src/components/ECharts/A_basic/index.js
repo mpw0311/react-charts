@@ -17,6 +17,8 @@ import getYAxis from './yAxis';
 import getSeries from './series';
 import getGrid from './grid';
 import getTitle from './title';
+import getDataZoom from './dataZoom';
+import { _toDataset } from '../methods';
 class BasicChart extends PureComponent {
     static defaultProps = {
         height: '100%',
@@ -24,9 +26,12 @@ class BasicChart extends PureComponent {
         type: 'line',
         loading: false,
         showTooltip: true,
+        interval: 'auto',
+        xAxisRotate: 0,
         axisPointer: 'shadow',
         showLegend: true,
         legendOrient: 'horizontal',
+        legendLeft: 'center',
         seriesLayoutBy: 'row',
         seriesSettings: {},
         showY2: false,
@@ -46,10 +51,12 @@ class BasicChart extends PureComponent {
         showToolboxSaveAsImage: false,
         stack: false,
         showLabel: false,
-        labelPosition: 'insideTop'
+        labelPosition: 'insideTop',
+        showDataZoom: false
     }
     render() {
         const { data, loading, height, style, onChartReady, onEvents } = this.props;
+        const source = _toDataset(data);
         if (!_isData(data)) {
             return (
                 <div style={{
@@ -70,12 +77,13 @@ class BasicChart extends PureComponent {
             title: getTitle(this.props),
             tooltip: getTooltip(this.props),
             toolbox: getToolbox(this.props),
+            dataZoom: getDataZoom(this.props),
             legend: getLegend(this.props),
-            dataset: getDataset(this.props),
+            dataset: getDataset({ source, ...this.props }),
             xAxis: getXAxis(this.props),
             yAxis: getYAxis(this.props),
             grid: getGrid(this.props),
-            series: getSeries(this.props)
+            series: getSeries({ source, ...this.props })
         };
         return (
             <Chart
@@ -107,9 +115,10 @@ BasicChart.propTypes = {
     }),
     //echart组件div样式
     style: PropTypes.object,
-
     //是否显示正在加载中
     loading: PropTypes.bool,
+    //是否显示dataZoom 组件
+    showDataZoom: PropTypes.bool,
     //可以传入tooltip配置，校验
     tooltip: PropTypes.object,
     //是否显示tootip
@@ -134,6 +143,17 @@ BasicChart.propTypes = {
     grid: PropTypes.object,
     //x轴配置
     xAxis: PropTypes.object,
+    //坐标轴刻度标签的显示间隔，在类目轴中有效。
+    interval: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+    ]),
+    //刻度标签旋转的角度，在类目轴的类目标签显示不下的时候可以通过旋转防止标签之间重叠。
+    //旋转的角度从 -90 度到 90 度。
+    xAxisRotate: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+    ]),
     //y轴配置
     yAxis: PropTypes.object,
     //图形系列(series)配置项

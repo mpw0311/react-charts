@@ -3,7 +3,7 @@ import ChartTabs from './tabPane';
 import data from './data/data01.json';
 import funneldata from './data/data02.json';
 import Sankeydata from './data/data03.json';
-export default function () {
+export default () => {
     return (
         <ChartTabs>
             <Bar config={{ name: '柱状图', basic_type: 'A' }} data={data} showLabel />
@@ -16,4 +16,4 @@ export default function () {
             <Sankey config={{ name: '桑基图', basic_type: 'B' }} data={Sankeydata} height={400} />
         </ChartTabs>
     );
-}
+};
