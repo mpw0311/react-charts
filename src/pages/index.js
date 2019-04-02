@@ -3,6 +3,7 @@ import { formatMessage } from 'umi-plugin-locale';
 import ChartView from '@components/ChartView';
 
 export default function () {
+ 
   return (
     <div className={styles.normal}>
       <ul className={styles.list}>
@@ -12,7 +13,6 @@ export default function () {
           </a>
         </li>
       </ul>
-
       <ChartView />
     </div>
   );
