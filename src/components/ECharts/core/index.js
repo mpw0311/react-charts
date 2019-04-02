@@ -30,7 +30,7 @@ export default class Chart extends PureComponent {
         });
     }
     render() {
-        const { style, height, theme = 'light', ...rest } = this.props;
+        const { style, theme='light', height, ...rest } = this.props;
         return (
             // <Context.Consumer>
             //     {({ theme }) => (
