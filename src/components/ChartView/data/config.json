@@ -236,6 +236,13 @@
             "type": "bool",
             "value": false,
             "des": "平均值"
+        },
+        {
+            "name": "stack",
+            "component": "Checkbox",
+            "type": "bool",
+            "value": false,
+            "des": "数据堆叠"
         }
     ],
     "series": [
