@@ -6,7 +6,40 @@
  */
 import getType from './type';
 export default (props) => {
-    const { series, source, type, seriesLayoutBy, seriesSettings, showY2, Y2Series, stack, showLabel, labelPosition } = props;
+    const {
+        series,
+        source,
+        type,
+        seriesLayoutBy,
+        seriesSettings,
+        showY2,
+        Y2Series,
+        stack,
+        showLabel,
+        labelPosition,
+        maxPoint,
+        minPoint,
+        averageLine
+    } = props;
+    const setting = { ...seriesSettings };
+    if (maxPoint === true) {
+        const { markPoint = {} } = setting;
+        const { data = [] } = markPoint;
+        markPoint.data = [...data, { type: 'max', name: '最大值' }];
+        setting.markPoint = markPoint;
+    }
+    if (minPoint === true) {
+        const { markPoint = {} } = setting;
+        const { data = [] } = markPoint;
+        markPoint.data = [...data, { type: 'min', name: '最小值' }];
+        setting.markPoint = markPoint;
+    }
+    if (averageLine === true) {
+        const { markLine = {} } = setting;
+        const { data = [] } = markLine;
+        markLine.data = [...data, { type: 'min', name: '最小值' }];
+        setting.markLine = markLine;
+    }
     /**
      * 生成对应的y2轴对应index索引
      * index第一个索引从0开始
@@ -53,7 +86,7 @@ export default (props) => {
             _series.push({
                 type: getType(type),
                 stack: stack === true ? '总量' : null,
-                ...seriesSettings,
+                ...setting,
                 seriesLayoutBy,
                 label: {
                     normal: {

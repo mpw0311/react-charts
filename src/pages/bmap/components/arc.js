@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Map, Arc, Marker } from 'react-bmap';
 import { utilCityCenter } from 'mapv';
-import { simpleMapStyle } from './simpleMapStyle';
+import simpleMapStyle from './simpleMapStyle';
 
 export default class App extends Component {
     render() {

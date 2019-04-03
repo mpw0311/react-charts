@@ -215,6 +215,27 @@
             "type": "string",
             "value": "",
             "des": "y2轴单位"
+        },
+        {
+            "name": "maxPoint",
+            "component": "Checkbox",
+            "type": "bool",
+            "value": false,
+            "des": "最大值"
+        },
+        {
+            "name": "minPoint",
+            "component": "Checkbox",
+            "type": "bool",
+            "value": false,
+            "des": "最小值"
+        },
+        {
+            "name": "averageLine",
+            "component": "Checkbox",
+            "type": "bool",
+            "value": false,
+            "des": "平均值"
         }
     ],
     "series": [
