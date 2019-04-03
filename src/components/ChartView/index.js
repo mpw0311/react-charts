@@ -6,7 +6,8 @@ import {
     Funnel,
     Pie,
     Sankey,
-    PieDoughnut
+    PieDoughnut,
+    // Radar
 } from '../Echarts';
 import ChartTabs from './tabPane';
 import data from './data/data01.json';
@@ -24,6 +25,17 @@ export default () => {
             <Pie config={{ name: '饼图', basic_type: 'B' }} data={funneldata} height={400} />
             <PieDoughnut config={{ name: '环图', basic_type: 'B' }} data={funneldata} height={400} />
             <Sankey config={{ name: '桑基图', basic_type: 'B' }} data={Sankeydata} height={400} />
+            {/* <Radar
+                config={{ name: '雷达图', basic_type: 'B' }}
+                data={data}
+                height={400}
+                indicator={[
+                    { name: 'Matcha Latte', max: 100 },
+                    { name: 'Milk Tea', max: 100 },
+                    { name: 'Cheese Cocoa', max: 100 },
+                    { name: 'Walnut Brownie', max: 100 }
+                ]}
+            /> */}
         </ChartTabs>
     );
 };
