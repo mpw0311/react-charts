@@ -9,9 +9,13 @@ import TrafficLayer from './components/TrafficLayer';
 import Control from './components/Control';
 import PointLabel from './components/PointLabel';
 import NavigationControl from './components/NavigationControl';
+import Polygon from './components/Polygon';
+import ThickRay from './components/thick-ray';
+import MapvMarkerList from './components/mapv-marker-list';
+import Arc from './components/arc';
+import Graphy from './components/graphy';
 const TabPane = Tabs.TabPane;
 export default function () {
-
     return (
         <div>
             <Tabs defaultActiveKey="1" tabPosition="left" >
@@ -44,6 +48,21 @@ export default function () {
                 </TabPane>
                 <TabPane tab="NavigationControl" key="10">
                     <NavigationControl />
+                </TabPane>
+                <TabPane tab="Polygon" key="11">
+                    <Polygon />
+                </TabPane>
+                <TabPane tab="ThickRay" key="12">
+                    <ThickRay />
+                </TabPane>
+                <TabPane tab="MapvMarkerList" key="13">
+                    <MapvMarkerList />
+                </TabPane>
+                <TabPane tab="Arc" key="14">
+                    <Arc />
+                </TabPane>
+                <TabPane tab="Graphy" key="15">
+                    <Graphy />
                 </TabPane>
             </Tabs>
         </div>
