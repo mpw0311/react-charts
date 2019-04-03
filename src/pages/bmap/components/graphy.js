@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Map, Circle, Polyline, Polygon } from 'react-bmap';
-import { simpleMapStyle } from './simpleMapStyle';
+import simpleMapStyle from './simpleMapStyle';
 
 export default class App extends Component {
     render() {
