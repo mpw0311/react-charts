@@ -53,7 +53,7 @@ class BasicChart extends PureComponent {
         stack: false,
         showLabel: false,
         labelPosition: 'insideTop',
-        showDataZoom: false
+        showDataZoom: false,
     }
     render() {
         const { data, loading, height, style, onChartReady, onEvents } = this.props;
@@ -169,6 +169,12 @@ BasicChart.propTypes = {
     ]),
     //y轴配置
     yAxis: PropTypes.object,
+    //最大值
+    maxPoint: PropTypes.bool,
+    //最小值
+    minPoint: PropTypes.bool,
+    //平均值
+    averageLine: PropTypes.bool,
     //图形系列(series)配置项
     series: PropTypes.oneOfType([
         PropTypes.array,

@@ -99,7 +99,7 @@ export default (props) => {
                 mapStyle={simpleMapStyle}>
                 {markers.map((marker, index) => {
                     var icon = "red" + (index + 1);
-                    return <Marker map={props.map} icon={icon} position={{ lng: marker.lng, lat: marker.lat }} {...marker} />;
+                    return <Marker key={index} map={props.map} icon={icon} position={{ lng: marker.lng, lat: marker.lat }} {...marker} />;
                 })}
             </Map>
         </Fragment>
