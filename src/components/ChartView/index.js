@@ -1,4 +1,13 @@
-import { Line, Bar, Area, YBar, Funnel, Pie, Sankey } from '../Echarts';
+import {
+    Line,
+    Bar,
+    Area,
+    YBar,
+    Funnel,
+    Pie,
+    Sankey,
+    PieDoughnut
+} from '../Echarts';
 import ChartTabs from './tabPane';
 import data from './data/data01.json';
 import funneldata from './data/data02.json';
@@ -13,6 +22,7 @@ export default () => {
             <YBar config={{ name: '条形图', basic_type: 'A' }} data={data} />
             <Funnel config={{ name: '漏斗图', basic_type: 'B' }} data={funneldata} height={400} />
             <Pie config={{ name: '饼图', basic_type: 'B' }} data={funneldata} height={400} />
+            <PieDoughnut config={{ name: '环图', basic_type: 'B' }} data={funneldata} height={400} />
             <Sankey config={{ name: '桑基图', basic_type: 'B' }} data={Sankeydata} height={400} />
         </ChartTabs>
     );
