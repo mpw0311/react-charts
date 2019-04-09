@@ -1,6 +1,7 @@
 import { PureComponent } from 'react';
 import { Tabs } from 'antd';
 import fetch from 'dva/fetch';
+import { unique_3 } from './components/unique';
 const TabPane = Tabs.TabPane;
 export default class es6 extends PureComponent {
     constructor(props) {
@@ -23,14 +24,23 @@ export default class es6 extends PureComponent {
             }
         };
         test();
+        const random = Math.random().toString(16).substring(2, 15);
         return (
             <Tabs defaultActiveKey="1" tabPosition="left" >
-                <TabPane tab="flat" key="1">
+                <TabPane tab="es6" key="1">
                     {JSON.stringify(arr2.flat())}
+                    <br />
                     <br />
                     {JSON.stringify(arr3.flat(2))}
                     <br />
+                    <br />
                     {JSON.stringify(data, null, 4)}
+                    <br />
+                    <br />
+                    随机数：{random}
+                    <br />
+                    <br />
+                    {JSON.stringify(unique_3([1, 2, 3, 2, 4, 4]))}
                 </TabPane>
             </Tabs>
         );
