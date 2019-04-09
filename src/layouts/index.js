@@ -1,11 +1,39 @@
-import styles from './index.css';
-
+import { Layout, Menu } from 'antd';
+import { Link } from 'umi';
+const {
+  Header, Sider, Content,
+} = Layout;
 function BasicLayout(props) {
+  const menuList = (
+    <Menu
+      style={{ width: 200 }}
+      defaultSelectedKeys={['1']}
+      mode="inline"
+      theme='dark'
+    >
+      <Menu.Item key="1">
+        <Link to='/'>Home</Link>
+      </Menu.Item>
+      <Menu.Item key="2">
+        <Link to='/bmap'>百度地图</Link>
+      </Menu.Item>
+      <Menu.Item key="es6">
+        <Link to='/es6'>es6</Link>
+      </Menu.Item>
+    </Menu>
+  );
   return (
-    <div className={styles.normal}>
-      <h1 className={styles.title}>Yay! Welcome to umi!</h1>
-      { props.children }
-    </div>
+    <Layout>
+      <Header style={{ height: '10vh' }}>Header</Header>
+      <Layout style={{ height: '90vh' }}>
+        <Sider>
+          {menuList}
+        </Sider>
+        <Content >
+          {props.children}
+        </Content>
+      </Layout>
+    </Layout>
   );
 }
 
