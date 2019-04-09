@@ -35,7 +35,16 @@ class BasicChart extends PureComponent {
         sort: 'none',
     }
     render() {
-        const { data, dataType, loading, style, height, onChartReady, onEvents } = this.props;
+        const {
+            type,
+            data,
+            dataType,
+            loading,
+            style,
+            height,
+            onChartReady,
+            onEvents
+        } = this.props;
         if (!_isData(data, dataType)) {
             return (
                 <div style={{
@@ -60,6 +69,9 @@ class BasicChart extends PureComponent {
             dataset: getDataset(this.props),
             series: getSeries(this.props)
         };
+        if (type === 'radar') {
+            option.radar = this.props.radar;
+        }
         return (
             <Chart
                 height={height}
