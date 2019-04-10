@@ -2,6 +2,7 @@ import { PureComponent } from 'react';
 import { Tabs } from 'antd';
 import fetch from 'dva/fetch';
 import { unique_3 } from './components/unique';
+import { sum } from './components/sum';
 const TabPane = Tabs.TabPane;
 export default class es6 extends PureComponent {
     constructor(props) {
@@ -41,6 +42,8 @@ export default class es6 extends PureComponent {
                     <br />
                     <br />
                     {JSON.stringify(unique_3([1, 2, 3, 2, 4, 4]))}
+                    <br />
+                    {JSON.stringify(sum([1, 2, 3, 4, 5, 6], 5))}
                 </TabPane>
             </Tabs>
         );

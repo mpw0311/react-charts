@@ -1,5 +1,6 @@
 
 import { unique_0, unique_1, unique_2, unique_3 } from './components/unique';
+import { sum } from './components/sum';
 describe('es6 methods', () => {
     const arr = [1, 2, 3, 4];
     it('array基本用法', () => {
@@ -46,5 +47,8 @@ describe('es6 methods', () => {
         expect(unique_1(arr4)).toEqual([4, 5, 6]);
         expect(unique_2(arr4)).toEqual([4, 5, 6]);
         expect(unique_3(arr4)).toEqual([4, 5, 6]);
+    })
+    it('求两数之和等于5', () => {
+        expect(sum([1, 2, 3, 4, 5, 6], 5)).toEqual([[1, 4], [2, 3]]);
     })
 });
