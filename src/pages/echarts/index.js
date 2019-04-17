@@ -1,7 +1,8 @@
-import { PureComponent, Fragment } from 'react';
-import { PageHeader, Card } from 'antd';
+import { PureComponent } from 'react';
 import ChartView from '@components/ChartView';
-export default class echarts extends PureComponent {
+import PageHeader from '@components/PageHeader';
+
+export default class extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {
@@ -19,15 +20,12 @@ export default class echarts extends PureComponent {
             },
         ];
         return (
-            <Fragment>
-                <PageHeader
-                    title="Echarts"
-                    breadcrumb={{ routes }}
-                />
-                <Card style={{ marginTop: 20 }}>
-                    <ChartView />
-                </Card>
-            </Fragment>
+            <PageHeader
+                title={'Echarts'}
+                routes={routes}
+            >
+                <ChartView />
+            </PageHeader>
         );
     }
-} 
+}

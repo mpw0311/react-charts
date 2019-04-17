@@ -1,5 +1,6 @@
-import { PureComponent, Fragment } from 'react';
-import { PageHeader, Card, Tabs } from 'antd';
+import { PureComponent } from 'react';
+import { Tabs } from 'antd';
+import PageHeader from '@components/PageHeader';
 import Bmap from './components/Map';
 import MarkerMap from './components/Marker';
 import DrivingRoute from './components/driving-route';
@@ -82,15 +83,12 @@ export default class echarts extends PureComponent {
             </TabPane>
         </Tabs>;
         return (
-            <Fragment>
-                <PageHeader
-                    title="百度地图"
-                    breadcrumb={{ routes }}
-                />
-                <Card style={{ marginTop: 20 }}>
-                    {map}
-                </Card>
-            </Fragment>
+            <PageHeader
+                title="百度地图"
+                routes={routes}
+            >
+                {map}
+            </PageHeader>
         );
     }
 } 

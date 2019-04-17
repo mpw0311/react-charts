@@ -3,6 +3,7 @@ import { resolve } from "path";
 
 export default {
   treeShaking: true,
+  outputPath:'./example',
   publicPath: './',
   history: 'hash',
   hash: true,
