@@ -1,10 +1,15 @@
 
 import { resolve } from "path";
-// ref: https://umijs.org/config/
+
 export default {
   treeShaking: true,
+  publicPath: './',
+  history: 'hash',
+  hash: true,
+  externals: {
+    echarts: 'window.echarts'
+  },
   plugins: [
-    // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {
       antd: true,
       dva: true,
@@ -12,7 +17,7 @@ export default {
       title: 'react-Echarts',
       dll: false,
       locale: {
-        enable: true,
+        enable: false,
         default: 'en-US',
       },
       routes: {
