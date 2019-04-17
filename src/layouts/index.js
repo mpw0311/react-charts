@@ -1,7 +1,7 @@
 import { Layout, Menu } from 'antd';
 import { Link } from 'umi';
 const {
-  Header, Sider, Content,
+  Sider, Content,
 } = Layout;
 function BasicLayout(props) {
   const menuList = (
@@ -12,20 +12,19 @@ function BasicLayout(props) {
       theme='dark'
     >
       <Menu.Item key="1">
-        <Link to='/'>Home</Link>
+        <Link to='/echarts'>Echarts</Link>
       </Menu.Item>
       <Menu.Item key="2">
         <Link to='/bmap'>百度地图</Link>
       </Menu.Item>
-      <Menu.Item key="es6">
+      {/* <Menu.Item key="es6">
         <Link to='/es6'>es6</Link>
-      </Menu.Item>
+      </Menu.Item> */}
     </Menu>
   );
   return (
     <Layout>
-      <Header style={{ height: '10vh' }}>Header</Header>
-      <Layout style={{ height: '90vh' }}>
+      <Layout style={{ height: '100vh' }}>
         <Sider>
           {menuList}
         </Sider>
