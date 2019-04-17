@@ -1,0 +1,42 @@
+.container header,
+.container article,
+.container aside,
+.container footer {
+  background-color: #69ADE6;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container aside {
+  background-color: #2F8CE3;
+}
+.container article {
+  background-color: #1378E6;
+}
+.demo1 {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.demo1 article {
+  flex: auto;
+}
+.demo2 {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.demo2 .content {
+  flex: auto;
+  flex-direction: row;
+  display: flex;
+}
+.demo2 article {
+  flex: auto;
+}
+.demo2 aside {
+  width: 200px;
+  flex: none;
+}
