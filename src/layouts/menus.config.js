@@ -42,8 +42,8 @@ export default [
         icon: 'icon-bMap',
         name: '百度地图'
     },
-    {
-        path: '/es6',
-        name: 'ES6'
-    }
+    // {
+    //     path: '/es6',
+    //     name: 'ES6'
+    // }
 ];
