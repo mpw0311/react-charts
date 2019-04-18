@@ -37,3 +37,7 @@ export default {
     '@config': resolve(__dirname, "./src/utils/config"),
   },
 }
+// 测试：
+// npm test
+// 生成测试报告：
+// npm test -- --coverage
