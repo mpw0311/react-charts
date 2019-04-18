@@ -1,32 +1,23 @@
-import { Layout, Menu } from 'antd';
-import { Link } from 'umi';
+import { Layout } from 'antd';
+import Menu from './menu';
+import styles from './index.less';
+import logo from '../assets/logo.png';
 const {
-  Sider, Content,
+  Header, Sider, Content,
 } = Layout;
 function BasicLayout(props) {
-  const menuList = (
-    <Menu
-      style={{ width: 200 }}
-      defaultSelectedKeys={['1']}
-      mode="inline"
-      theme='dark'
-    >
-      <Menu.Item key="1">
-        <Link to='/echarts'>Echarts</Link>
-      </Menu.Item>
-      <Menu.Item key="2">
-        <Link to='/bmap'>百度地图</Link>
-      </Menu.Item>
-      {/* <Menu.Item key="es6">
-        <Link to='/es6'>es6</Link>
-      </Menu.Item> */}
-    </Menu>
-  );
+  const header = <Header className={styles.header}>
+    <span className={styles.logo}>
+      <img src={logo} alt="可视化" />
+    </span>
+    <h2 className={styles.title}>数据可视化</h2>
+  </Header>;
   return (
     <Layout>
       <Layout style={{ height: '100vh' }}>
         <Sider>
-          {menuList}
+          {header}
+          <Menu />
         </Sider>
         <Content >
           {props.children}

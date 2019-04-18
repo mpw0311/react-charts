@@ -9,11 +9,12 @@ export default class extends PureComponent {
     }
     render() {
         const { title, routes, children } = this.props;
+        const list = routes.map(item => ({ breadcrumbName: item }));
         return (
             <Fragment>
                 <PageHeader
                     title={title}
-                    breadcrumb={{ routes }}
+                    breadcrumb={{ routes: list }}
                 />
                 <Card style={{ marginTop: 20 }}>
                     {children}

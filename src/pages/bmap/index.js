@@ -26,15 +26,7 @@ export default class echarts extends PureComponent {
         };
     }
     render() {
-        const routes = [
-            {
-                path: '/',
-                breadcrumbName: '百度地图',
-            },
-            {
-                breadcrumbName: 'view',
-            },
-        ];
+
         const map = <Tabs defaultActiveKey="1" tabPosition="left" >
             <TabPane tab="Bmap" key="1">
                 <Bmap />
@@ -85,7 +77,7 @@ export default class echarts extends PureComponent {
         return (
             <PageHeader
                 title="百度地图"
-                routes={routes}
+                routes={['Home', '百度地图']}
             >
                 {map}
             </PageHeader>

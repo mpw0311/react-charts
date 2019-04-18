@@ -10,19 +10,10 @@ export default class extends PureComponent {
         };
     }
     render() {
-        const routes = [
-            {
-                path: '/',
-                breadcrumbName: 'Echarts',
-            },
-            {
-                breadcrumbName: 'view',
-            },
-        ];
         return (
             <PageHeader
                 title={'Echarts'}
-                routes={routes}
+                routes={['Echarts', 'view']}
             >
                 <ChartView />
             </PageHeader>

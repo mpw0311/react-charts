@@ -34,5 +34,10 @@ export default {
   alias: {
     "@": resolve(__dirname, "./src"),
     '@components': resolve(__dirname, "./src/components"),
+    '@config': resolve(__dirname, "./src/utils/config"),
   },
 }
+// 测试：
+// npm test
+// 生成测试报告：
+// npm test -- --coverage
