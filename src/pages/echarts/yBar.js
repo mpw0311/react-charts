@@ -8,7 +8,7 @@ class Chart extends PureComponent {
     render() {
         return (
             <PageHeader
-                title={'Area'}
+                title={'YBar'}
                 routes={['Echarts','YBar']}
             >
                 <Panel type={'A'}>
