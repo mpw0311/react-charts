@@ -11,6 +11,7 @@ export default {
         yBar_data: data1,
         funnel_data: data2,
         pie_data: data2,
+        pieDoughnut_data: data2,
         sankey_data: data3,
     },
     subscriptions: {

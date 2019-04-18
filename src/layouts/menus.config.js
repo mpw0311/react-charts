@@ -27,6 +27,14 @@ export default [
                 path: '/echarts/pie',
                 name: 'Pie'
             },
+            {
+                path: '/echarts/pieDoughnut',
+                name: 'PieDoughnut'
+            },
+            {
+                path: '/echarts/sankey',
+                name: 'Sankey'
+            },
         ]
     },
     {
