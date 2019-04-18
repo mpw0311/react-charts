@@ -6,19 +6,11 @@ import Panel from './components/panel';
 @connect(({ echarts }) => echarts)
 class Chart extends PureComponent {
     render() {
-        const routes = [
-            {
-                path: '/',
-                breadcrumbName: 'Echarts',
-            },
-            {
-                breadcrumbName: 'Line',
-            },
-        ];
+        
         return (
             <PageHeader
                 title={'Line'}
-                routes={routes}
+                routes={['Echarts','Line']}
             >
                 <Panel type={'A'}>
                     <Line data={this.props['line_data']} />

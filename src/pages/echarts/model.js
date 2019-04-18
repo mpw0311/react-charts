@@ -7,7 +7,10 @@ export default {
     state: {
         bar_data: data1,
         line_data: data1,
+        area_data: data1,
+        yBar_data: data1,
         funnel_data: data2,
+        pie_data: data2,
         sankey_data: data3,
     },
     subscriptions: {

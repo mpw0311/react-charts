@@ -1,10 +1,37 @@
 export default [
     {
-        path: '/echarts',
-        name: 'Echarts'
+        name: 'Echarts',
+        icon: 'home',
+        children: [
+            {
+                path: '/echarts/bar',
+                name: 'Bar'
+            },
+            {
+                path: '/echarts/line',
+                name: 'Line'
+            },
+            {
+                path: '/echarts/area',
+                name: 'Area'
+            },
+            {
+                path: '/echarts/yBar',
+                name: 'YBar'
+            },
+            {
+                path: '/echarts/funnel',
+                name: 'Funnel'
+            },
+            {
+                path: '/echarts/pie',
+                name: 'Pie'
+            },
+        ]
     },
     {
         path: '/bmap',
+        icon: 'icon-bMap',
         name: '百度地图'
     },
     {

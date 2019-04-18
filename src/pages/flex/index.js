@@ -9,19 +9,10 @@ export default class extends PureComponent {
         };
     }
     render() {
-        const routes = [
-            {
-                path: '/',
-                breadcrumbName: 'home',
-            },
-            {
-                breadcrumbName: 'flex',
-            },
-        ];
         return (
             <PageHeader
                 title={'flex'}
-                routes={routes}
+                routes={['Home', 'flex']}
             >
                 <div className={styles.container}>
                     <h2>上-中-下</h2>
