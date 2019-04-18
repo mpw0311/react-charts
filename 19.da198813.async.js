@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([[19],{5363:function(e,t,a){"use strict";a.r(t);var n=a("q1tI"),r=a.n(n),s=a("vVcU");class p extends n["PureComponent"]{render(){return r.a.createElement(s["a"],this.props)}}p.defaultProps={data:{},type:"bar",loading:!1,xAxis:{type:"value"},yAxis:{type:"category"}},t["default"]=p}}]);
