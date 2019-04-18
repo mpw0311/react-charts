@@ -1,3 +1,19 @@
+.layout-align() {
+
+    header,
+    article,
+    aside,
+    footer {
+        text-align: center;
+        display: flex;
+        //竖轴方向对齐方式
+        align-items: center;
+        //水平方向对齐方式
+        justify-content: center;
+    }
+
+}
+
 .container {
 
     header,
@@ -6,12 +22,6 @@
     footer {
         background-color: #69ADE6;
         color: #ffffff;
-        text-align: center;
-        display: flex;
-        //竖轴方向对齐方式
-        align-items: center;
-        //水平方向对齐方式
-        justify-content: center;
     }
 
     aside {
@@ -27,6 +37,7 @@
     min-height: 400px;
     display: flex;
     flex-direction: column;
+    .layout-align();
 
     article {
         flex: auto;
@@ -37,6 +48,7 @@
     min-height: 400px;
     display: flex;
     flex-direction: column;
+    .layout-align();
 
     .content {
         flex: auto;
@@ -55,4 +67,74 @@
     }
 }
 
-.demo3 {}
+.demo3 {
+    min-height: 400px;
+    display: flex;
+    flex-direction: row;
+    .layout-align();
+
+    aside {
+        width: 200px;
+        flex: none;
+    }
+
+    .content {
+        flex: auto;
+        display: flex;
+        flex-direction: column;
+
+        article {
+            flex: auto;
+        }
+    }
+
+}
+
+.demo4 {
+    min-height: 400px;
+    display: flex;
+    flex-direction: row;
+
+    header,
+    article,
+    footer {
+        text-align: center;
+        display: flex;
+        //竖轴方向对齐方式
+        align-items: center;
+        //水平方向对齐方式
+        justify-content: center;
+    }
+
+    header {
+        height: 60px;
+    }
+
+    aside {
+        width: 200px;
+        flex: none;
+
+        span {
+            height: 60px;
+            background-color: #002140;
+            color: #ffffff;
+            display: flex;
+            text-align: center;
+            //竖轴方向对齐方式
+            align-items: center;
+            //水平方向对齐方式
+            justify-content: center;
+        }
+    }
+
+    .content {
+        flex: auto;
+        display: flex;
+        flex-direction: column;
+
+        article {
+            flex: auto;
+        }
+    }
+
+}

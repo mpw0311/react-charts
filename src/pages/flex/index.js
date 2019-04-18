@@ -39,9 +39,20 @@ export default class extends PureComponent {
                         </div>
                         <footer>FOOTER</footer>
                     </div>
-                    <h2>上-下(左-右)</h2>
+                    <h2>左-右(上-中-下)</h2>
                     <div className={styles.demo3}>
                         <aside>ASIDE</aside>
+                        <div className={styles.content}>
+                            <header>Header</header>
+                            <article>CONTENT</article>
+                            <footer>FOOTER</footer>
+                        </div>
+                    </div>
+                    <h2>左侧独立滚动条</h2>
+                    <div className={styles.demo4}>
+                        <aside>
+                            <span>Title</span>
+                        </aside>
                         <div className={styles.content}>
                             <header>Header</header>
                             <article>CONTENT</article>

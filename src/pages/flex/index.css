@@ -4,10 +4,6 @@
 .container footer {
   background-color: #69ADE6;
   color: #ffffff;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .container aside {
   background-color: #2F8CE3;
@@ -20,6 +16,15 @@
   display: flex;
   flex-direction: column;
 }
+.demo1 header,
+.demo1 article,
+.demo1 aside,
+.demo1 footer {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .demo1 article {
   flex: auto;
 }
@@ -27,6 +32,15 @@
   min-height: 400px;
   display: flex;
   flex-direction: column;
+}
+.demo2 header,
+.demo2 article,
+.demo2 aside,
+.demo2 footer {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .demo2 .content {
   flex: auto;
@@ -39,4 +53,67 @@
 .demo2 aside {
   width: 200px;
   flex: none;
+}
+.demo3 {
+  min-height: 400px;
+  display: flex;
+  flex-direction: row;
+}
+.demo3 header,
+.demo3 article,
+.demo3 aside,
+.demo3 footer {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.demo3 aside {
+  width: 200px;
+  flex: none;
+}
+.demo3 .content {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+}
+.demo3 .content article {
+  flex: auto;
+}
+.demo4 {
+  min-height: 400px;
+  display: flex;
+  flex-direction: row;
+}
+.demo4 header,
+.demo4 article,
+.demo4 footer {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.demo4 header {
+  height: 60px;
+}
+.demo4 aside {
+  width: 200px;
+  flex: none;
+}
+.demo4 aside span {
+  height: 60px;
+  background-color: #002140;
+  color: #ffffff;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.demo4 .content {
+  flex: auto;
+  display: flex;
+  flex-direction: column;
+}
+.demo4 .content article {
+  flex: auto;
 }
