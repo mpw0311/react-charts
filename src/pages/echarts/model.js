@@ -13,6 +13,7 @@ export default {
         pie_data: data2,
         pieDoughnut_data: data2,
         sankey_data: data3,
+        description:'本系统只展示少数Echarts图形及属性，后期有时间会慢慢更新！'
     },
     subscriptions: {
 
