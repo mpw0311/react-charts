@@ -13,7 +13,10 @@ export default {
     ['umi-plugin-react', {
       antd: true,
       dva: true,
-      dynamicImport: { webpackChunkName: true },
+      dynamicImport: {
+        webpackChunkName: true,
+        loadingComponent: '../src/components/RouteLoading/index.js',
+      },
       title: 'react-Echarts',
       dll: false,
       locale: {
