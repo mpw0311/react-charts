@@ -3,7 +3,7 @@
         {
             "name": "height",
             "component": "Input",
-            "type": "string",
+            "type": "text",
             "value": "300px",
             "des": "高度"
         },
@@ -26,7 +26,7 @@
         {
             "name": "titleText",
             "component": "Input",
-            "type": "string",
+            "type": "text",
             "value": "",
             "des": "图形标题"
         }
@@ -72,7 +72,36 @@
             "des": "图例组件离容器上侧的距离"
         }
     ],
-    "grid": [],
+    "grid": [
+        {
+            "name": "gridTop",
+            "component": "Input",
+            "type": "number",
+            "value": 0,
+            "des": "网格上边距"
+        },
+        {
+            "name": "gridBottom",
+            "component": "Input",
+            "type": "number",
+            "value": 0,
+            "des": "网格下边距"
+        },
+        {
+            "name": "gridLeft",
+            "component": "Input",
+            "type": "number",
+            "value": 0,
+            "des": "网格左边距"
+        },
+        {
+            "name": "gridRight",
+            "component": "Input",
+            "type": "number",
+            "value": 0,
+            "des": "网格右边距"
+        }
+    ],
     "tooltip": [
         {
             "name": "showTooltip",
@@ -184,14 +213,14 @@
         {
             "name": "YName",
             "component": "Input",
-            "type": "string",
+            "type": "text",
             "value": "",
             "des": "y轴name"
         },
         {
             "name": "YUnit",
             "component": "Input",
-            "type": "string",
+            "type": "text",
             "value": "",
             "des": "y轴单位"
         },
@@ -205,14 +234,14 @@
         {
             "name": "Y2Name",
             "component": "Input",
-            "type": "string",
+            "type": "text",
             "value": "",
             "des": "y轴name"
         },
         {
             "name": "Y2Unit",
             "component": "Input",
-            "type": "string",
+            "type": "text",
             "value": "",
             "des": "y2轴单位"
         },

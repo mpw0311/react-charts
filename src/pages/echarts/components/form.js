@@ -34,7 +34,7 @@ function MyForm(props) {
         onChange && onChange(res);
     };
     const getFormItem = (item, i) => {
-        const { name, component, value, des } = item;
+        const { name, type, component, value, des } = item;
         switch (component) {
             case 'Checkbox':
                 return <Form.Item
@@ -53,7 +53,7 @@ function MyForm(props) {
                     key={`item${i}`}
                 >
 
-                    <Input name={name} placeholder={name} defaultValue={value} onChange={handleChange} />
+                    <Input type={type} name={name} placeholder={name} defaultValue={value} onChange={handleChange} />
                 </Form.Item>;
             case "Select":
                 return <Form.Item

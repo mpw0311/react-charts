@@ -1,7 +1,7 @@
 /**
  * @author M
  * @email mpw0311@163.com
- * @version  1.0.1
+ * @version  1.0.2
  * @description 
  */
 import { PureComponent } from 'react';
@@ -154,6 +154,10 @@ BasicChart.propTypes = {
     ]),
     //直角坐标系内绘图网格配置
     grid: PropTypes.object,
+    gridTop: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    gridBottom: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    gridLeft: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
+    gridRight: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     //x轴配置
     xAxis: PropTypes.object,
     //坐标轴刻度标签的显示间隔，在类目轴中有效。
