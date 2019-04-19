@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([[10],{cIPf:function(a,e,n){"use strict";n.r(e);var t=n("q1tI"),c=n.n(t),o=n("dPBl");e["default"]=(()=>c.a.createElement(o["a"],{to:"/bmap/basic"}))}}]);
