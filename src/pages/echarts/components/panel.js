@@ -32,10 +32,10 @@ export default class extends PureComponent {
         };
         return (
             <Row gutter={16}>
-                <Col span={10}>
+                <Col xs={{ span: 24, order: 2 }} lg={10}>
                     <Option type={type} data={data} onBlur={handleBlur} onChange={handleChange} />
                 </Col>
-                <Col span={14}>
+                <Col xs={{ span: 24, order: 1 }} lg={14}>
                     {cloneElement(children, { ...this.state })}
                 </Col>
             </Row>
