@@ -17,7 +17,7 @@ function BasicLayout(props) {
       <Layout style={{ height: '100vh' }}>
         <Sider>
           {header}
-          <Menu />
+          <Menu {...props} />
         </Sider>
         <Content >
           {props.children}

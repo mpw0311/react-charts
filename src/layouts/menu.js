@@ -37,22 +37,15 @@ export default class extends PureComponent {
         });
     }
     render() {
+        const { location: { pathname } } = this.props;
         return (
             <Menu
                 style={{ width: 200 }}
-                defaultSelectedKeys={['1']}
+                defaultSelectedKeys={[pathname]}
                 mode="inline"
                 theme='dark'
             >
                 {this.renderMenu(menuList)}
-                {/* {
-                    menuList.map(item => {
-                        const { path, name } = item;
-                        return (<Menu.Item key={path}>
-                            <Link to={path}>{name}</Link>
-                        </Menu.Item>);
-                    })
-                } */}
             </Menu>
         );
     }
