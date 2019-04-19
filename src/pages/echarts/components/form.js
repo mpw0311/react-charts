@@ -94,13 +94,14 @@ function MyForm(props) {
             'tooltip',
             'toolbox',
             'series'
-        ]
+        ],
     };
+    const list = Array.isArray(type) ? type : type_dict[type || 'A'];
     return (
         <Form style={{ textAlign: 'left' }}>
             <Collapse accordion>
                 {
-                    type_dict[type || 'A'].map(name => {
+                    list.map(name => {
                         return (
                             <Panel header={name} key={name}>
                                 {

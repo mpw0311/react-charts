@@ -13,7 +13,7 @@ class Chart extends PureComponent {
                 routes={['Echarts', 'Sankey']}
                 description={description}
             >
-                <Panel type={'B'}>
+                <Panel type={['basic', 'tooltip', 'toolbox']}>
                     <Sankey data={sankey_data} height={400} />
                 </Panel>
             </PageHeader>
