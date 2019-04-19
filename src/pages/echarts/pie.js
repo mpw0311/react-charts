@@ -6,14 +6,15 @@ import Panel from './components/panel';
 @connect(({ echarts }) => echarts)
 class Chart extends PureComponent {
     render() {
-
+        const { description, pie_data } = this.props;
         return (
             <PageHeader
-                title={'Pie'}
+                title={'饼图'}
                 routes={['Echarts', 'Pie']}
+                description={description}
             >
                 <Panel type={'B'}>
-                    <Pie data={this.props['pie_data']} height={400} />
+                    <Pie data={pie_data} height={400} />
                 </Panel>
             </PageHeader>
         );

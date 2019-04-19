@@ -18,3 +18,47 @@
   font-size: 14px;
   flex: auto;
 }
+.menu {
+  width: 200px;
+  height: calc(100vh - 70px);
+  overflow-y: auto;
+  /*火狐下隐藏滚动条*/
+  scrollbar-width: none;
+  /*滚动条里面轨道*/
+  /*隐藏滚动条，当IE下溢出，仍然可以滚动*/
+  -ms-overflow-style: none;
+}
+.menu::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 4px;
+  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 4px;
+}
+.menu::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 10px;
+  box-shadow: inset -1px 0 5px rgba(0, 33, 64, 0.7);
+  -webkit-box-shadow: inset -1px 0 5px rgba(0, 33, 64, 0.7);
+  background-color: rgba(240, 242, 245, 0.9);
+}
+.content {
+  overflow-y: auto;
+  /*火狐下隐藏滚动条*/
+  scrollbar-width: none;
+  /*滚动条里面轨道*/
+  /*隐藏滚动条，当IE下溢出，仍然可以滚动*/
+  -ms-overflow-style: none;
+}
+.content::-webkit-scrollbar {
+  /*滚动条整体样式*/
+  width: 4px;
+  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 4px;
+}
+.content::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 10px;
+  box-shadow: inset -1px 0 5px rgba(0, 33, 64, 0.7);
+  -webkit-box-shadow: inset -1px 0 5px rgba(0, 33, 64, 0.7);
+  background-color: rgba(240, 242, 245, 0.9);
+}

@@ -163,7 +163,7 @@
             "component": "Input",
             "type": "text",
             "value": "auto",
-            "des": "强制设置坐标轴分割间隔"
+            "des": "强制坐标轴分割间隔,值：auto 或 0，1，2，3……"
         },
         {
             "name": "xAxisRotate",

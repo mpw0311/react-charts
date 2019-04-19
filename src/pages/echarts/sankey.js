@@ -6,14 +6,15 @@ import Panel from './components/panel';
 @connect(({ echarts }) => echarts)
 class Chart extends PureComponent {
     render() {
-
+        const { description, sankey_data } = this.props;
         return (
             <PageHeader
-                title={'Sankey'}
+                title={'桑基图'}
                 routes={['Echarts', 'Sankey']}
+                description={description}
             >
-                <Panel type={'B'}>
-                    <Sankey data={this.props['sankey_data']} height={400} />
+                <Panel type={['basic', 'tooltip', 'toolbox']}>
+                    <Sankey data={sankey_data} height={400} />
                 </Panel>
             </PageHeader>
         );

@@ -40,7 +40,69 @@ export default [
     {
         path: '/bmap',
         icon: 'icon-bMap',
-        name: '百度地图'
+        name: '百度地图',
+        children: [
+            {
+                path: '/bmap/basic',
+                name: 'BasicMap'
+            },
+            {
+                path: '/bmap/markerMap',
+                name: 'MarkerMap'
+            },
+            {
+                path: '/bmap/drivingRoute',
+                name: 'DrivingRoute'
+            },
+            {
+                path: '/bmap/markerList',
+                name: 'MarkerList'
+            },
+            {
+                path: '/bmap/road',
+                name: 'Road'
+            },
+            {
+                path: '/bmap/boundary',
+                name: 'Boundary'
+            },
+            {
+                path: '/bmap/trafficLayer',
+                name: 'TrafficLayer'
+            },
+            {
+                path: '/bmap/control',
+                name: 'Control'
+            },
+            {
+                path: '/bmap/pointLabel',
+                name: 'PointLabel'
+            },
+            {
+                path: '/bmap/navigationControl',
+                name: 'NavigationControl'
+            },
+            {
+                path: '/bmap/polygon',
+                name: 'Polygon'
+            },
+            {
+                path: '/bmap/thickRay',
+                name: 'ThickRay'
+            },
+            {
+                path: '/bmap/mapvMarkerList',
+                name: 'MapvMarkerList'
+            },
+            {
+                path: '/bmap/arc',
+                name: 'Arc'
+            },
+            {
+                path: '/bmap/graphy',
+                name: 'graphy'
+            },
+        ]
     },
     // {
     //     path: '/es6',
