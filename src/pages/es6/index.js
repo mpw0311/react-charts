@@ -1,5 +1,5 @@
 import { PureComponent } from 'react';
-import { Tabs } from 'antd';
+import { Tabs, Input } from 'antd';
 import fetch from 'dva/fetch';
 import { unique_3 } from './components/unique';
 import { sum } from './components/sum';
@@ -12,6 +12,7 @@ export default class es6 extends PureComponent {
             data: undefined
         };
     }
+    handleChange = (e) => { console.log('change:', e.target,e.target.value,e.target.name); }
     render() {
         const arr2 = [1, 2, [3, 4]];
         const arr3 = [1, 2, [3, 4, [5, 6]]];
@@ -46,6 +47,7 @@ export default class es6 extends PureComponent {
                     <br />
                     {JSON.stringify(sum([1, 2, 3, 4, 5, 6], 5))}
                     <PromiseTest />
+                    <Input name={'myInput'} onChange={this.handleChange} />
                 </TabPane>
             </Tabs>
         );

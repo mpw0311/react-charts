@@ -13,7 +13,7 @@ export default {
         pie_data: data2,
         pieDoughnut_data: data2,
         sankey_data: data3,
-        description:'本Demo仅作为参考，只展示少数Echarts图形及属性，仍有许多需要完善和修改的地方，后期有时间会慢慢完善更新！'
+        description: '本Demo仅作为参考，只展示少数Echarts图形及属性，仍有许多需要完善和修改的地方，后期有时间会慢慢完善更新！'
     },
     subscriptions: {
 
