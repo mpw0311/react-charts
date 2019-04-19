@@ -3,6 +3,7 @@ import { Link } from 'umi';
 import { Menu } from 'antd';
 import Icon from '@components/Icon';
 import menuList from './menus.config';
+import styles from './index.less';
 
 export default class extends PureComponent {
     static defaultProps = {
@@ -24,15 +25,16 @@ export default class extends PureComponent {
                     </Menu.SubMenu>
                 );
             } else {
-                return (<Menu.Item key={path}>
-                    <Link to={path}>
-                        {
-                            icon ? <Icon type={icon} /> : ''
-                        }
-                        <span>{name}</span>
+                return (
+                    <Menu.Item key={path}>
+                        <Link to={path}>
+                            {
+                                icon ? <Icon type={icon} /> : ''
+                            }
+                            <span>{name}</span>
 
-                    </Link>
-                </Menu.Item>);
+                        </Link>
+                    </Menu.Item>);
             }
         });
     }
@@ -40,10 +42,10 @@ export default class extends PureComponent {
         const { location: { pathname } } = this.props;
         return (
             <Menu
-                style={{ width: 200 }}
                 defaultSelectedKeys={[pathname]}
                 mode="inline"
                 theme='dark'
+                className={styles.menu}
             >
                 {this.renderMenu(menuList)}
             </Menu>

@@ -15,11 +15,11 @@ function BasicLayout(props) {
   return (
     <Layout>
       <Layout style={{ height: '100vh' }}>
-        <Sider>
+        <Sider style={{ height: '100vh' }}>
           {header}
           <Menu {...props} />
         </Sider>
-        <Content >
+        <Content className={styles.content}>
           {props.children}
         </Content>
       </Layout>
