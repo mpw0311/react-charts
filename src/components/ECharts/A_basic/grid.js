@@ -9,16 +9,16 @@ export default (props) => {
     const { grid, gridTop, gridBottom, gridLeft, gridRight } = props;
 
     const gridOpt = {};
-    if (gridTop) {
+    if (gridTop && gridTop !== '') {
         gridOpt.top = gridTop;
     }
-    if (gridBottom) {
+    if (gridBottom && gridBottom !== '') {
         gridOpt.bottom = gridBottom;
     }
-    if (gridLeft) {
+    if (gridLeft && gridLeft !== '') {
         gridOpt.left = gridLeft;
     }
-    if (gridRight) {
+    if (gridRight && gridRight !== '') {
         gridOpt.right = gridRight;
     }
     return { ...gridOpt, ...grid };

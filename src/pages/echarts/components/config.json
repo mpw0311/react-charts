@@ -77,28 +77,28 @@
             "name": "gridTop",
             "component": "Input",
             "type": "number",
-            "value": 0,
+            "value": 40,
             "des": "网格上边距"
         },
         {
             "name": "gridBottom",
             "component": "Input",
             "type": "number",
-            "value": 0,
+            "value": 40,
             "des": "网格下边距"
         },
         {
             "name": "gridLeft",
             "component": "Input",
             "type": "number",
-            "value": 0,
+            "value": 60,
             "des": "网格左边距"
         },
         {
             "name": "gridRight",
             "component": "Input",
             "type": "number",
-            "value": 0,
+            "value": 40,
             "des": "网格右边距"
         }
     ],
