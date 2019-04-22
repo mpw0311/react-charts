@@ -91,6 +91,13 @@ BasicChart.propTypes = {
     title: PropTypes.object,
     //组件标题
     titleText: PropTypes.string,
+    titleColor: PropTypes.string,
+    titleFontSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    titleFontWeight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    titleTop: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    titleBottom: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    titleLeft: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    titleRight: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     //支持的图形类型
     type: PropTypes.oneOf(['funnel', 'pie', 'sankey']),
     //数据格式校验

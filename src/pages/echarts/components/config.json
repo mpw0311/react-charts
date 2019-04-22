@@ -29,6 +29,57 @@
             "type": "text",
             "value": "",
             "des": "图形标题"
+        },
+        {
+            "name": "titleFontSize",
+            "component": "Input",
+            "type": "number",
+            "value": 20,
+            "des": "标题字号"
+        },
+        {
+            "name": "titleColor",
+            "component": "Input",
+            "type": "text",
+            "value": "#333",
+            "des": "图形标题颜色"
+        },
+        {
+            "name": "titleFontWeight",
+            "component": "Select",
+            "type": "array",
+            "value": [
+                "narmal",
+                "bold",
+                "bolder",
+                "lighter",
+                "200",
+                "300",
+                "400"
+            ],
+            "des": "图形标题颜色"
+        },
+        {
+            "name": "titleLeft",
+            "component": "Select",
+            "type": "array",
+            "value": [
+                "left",
+                "right",
+                "center"
+            ],
+            "des": "标题组件离容器左侧的距离"
+        },
+        {
+            "name": "titleTop",
+            "component": "Select",
+            "type": "array",
+            "value": [
+                "top",
+                "middle",
+                "bottom"
+            ],
+            "des": "标题组件离容器上侧的距离"
         }
     ],
     "legend": [
@@ -232,6 +283,37 @@
             "des": "是否显示y2轴"
         },
         {
+            "name": "Y2Type",
+            "component": "Select",
+            "type": "array",
+            "value": [
+                "line",
+                "bar"
+            ],
+            "des": "y2轴图形类型"
+        },
+        {
+            "name": "Y2SeriesIndex",
+            "component": "Select",
+            "type": "array",
+            "mode": "tags",
+            "value": [
+                "0",
+                "1",
+                "2",
+                "3"
+            ],
+            "des": "指定y2轴对应的series数据索引，值为数字，与Y2SeriesName二者选其一"
+        },
+        {
+            "name": "Y2SeriesName",
+            "component": "Select",
+            "type": "array",
+            "mode": "tags",
+            "value": [],
+            "des": "通过属性字段名指定y2轴对应的数据索引，权重高于Y2SeriesIndex"
+        },
+        {
             "name": "Y2Name",
             "component": "Input",
             "type": "text",
@@ -244,6 +326,13 @@
             "type": "text",
             "value": "",
             "des": "y2轴单位"
+        },
+        {
+            "name": "showY2SplitLine",
+            "component": "Checkbox",
+            "type": "bool",
+            "value": false,
+            "des": "Y2轴网格线"
         },
         {
             "name": "maxPoint",
