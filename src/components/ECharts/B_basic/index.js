@@ -43,7 +43,8 @@ class BasicChart extends PureComponent {
             style,
             height,
             onChartReady,
-            onEvents
+            onEvents,
+            color
         } = this.props;
         if (!_isData(data, dataType)) {
             return (
@@ -67,7 +68,8 @@ class BasicChart extends PureComponent {
             toolbox: getToolbox(this.props),
             legend: getLegend(this.props),
             dataset: getDataset(this.props),
-            series: getSeries(this.props)
+            series: getSeries(this.props),
+            color
         };
         if (type === 'radar') {
             option.radar = this.props.radar;

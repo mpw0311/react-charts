@@ -62,7 +62,7 @@ class BasicChart extends PureComponent {
         showDataZoom: false,
     }
     render() {
-        const { data, loading, height, style, onChartReady, onEvents } = this.props;
+        const { data, loading, height, style, onChartReady, onEvents, color } = this.props;
         if (!_isData(data)) {
             return (
                 <div style={{
@@ -90,7 +90,8 @@ class BasicChart extends PureComponent {
             xAxis: getXAxis(this.props),
             yAxis: getYAxis(this.props),
             grid: getGrid(this.props),
-            series: getSeries({ dataSource, ...this.props })
+            series: getSeries({ dataSource, ...this.props }),
+            color
         };
         return (
             <Chart
