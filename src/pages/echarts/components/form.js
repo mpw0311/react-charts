@@ -85,6 +85,7 @@ function MyForm(props) {
             'toolbox',
             'xAxis',
             'yAxis',
+            'y2Axis',
             'series'
         ],
         "B": [

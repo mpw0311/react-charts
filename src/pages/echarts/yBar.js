@@ -13,7 +13,7 @@ class Chart extends PureComponent {
                 routes={['Echarts', 'YBar']}
                 description={description}
             >
-                <Panel type={'A'}>
+                <Panel type={['basic', 'title', 'legend', 'grid', 'tooltip', 'toolbox', 'xAxis', 'yAxis', 'series']}>
                     <YBar data={yBar_data} />
                 </Panel>
             </PageHeader>

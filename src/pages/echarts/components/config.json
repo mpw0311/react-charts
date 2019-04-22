@@ -276,6 +276,36 @@
             "des": "y轴单位"
         },
         {
+            "name": "maxPoint",
+            "component": "Checkbox",
+            "type": "bool",
+            "value": false,
+            "des": "最大值"
+        },
+        {
+            "name": "minPoint",
+            "component": "Checkbox",
+            "type": "bool",
+            "value": false,
+            "des": "最小值"
+        },
+        {
+            "name": "averageLine",
+            "component": "Checkbox",
+            "type": "bool",
+            "value": false,
+            "des": "平均值"
+        },
+        {
+            "name": "stack",
+            "component": "Checkbox",
+            "type": "bool",
+            "value": false,
+            "des": "数据堆叠"
+        }
+    ],
+    "y2Axis": [
+        {
             "name": "showY2",
             "component": "Checkbox",
             "type": "bool",
@@ -333,34 +363,6 @@
             "type": "bool",
             "value": false,
             "des": "Y2轴网格线"
-        },
-        {
-            "name": "maxPoint",
-            "component": "Checkbox",
-            "type": "bool",
-            "value": false,
-            "des": "最大值"
-        },
-        {
-            "name": "minPoint",
-            "component": "Checkbox",
-            "type": "bool",
-            "value": false,
-            "des": "最小值"
-        },
-        {
-            "name": "averageLine",
-            "component": "Checkbox",
-            "type": "bool",
-            "value": false,
-            "des": "平均值"
-        },
-        {
-            "name": "stack",
-            "component": "Checkbox",
-            "type": "bool",
-            "value": false,
-            "des": "数据堆叠"
         }
     ],
     "series": [
