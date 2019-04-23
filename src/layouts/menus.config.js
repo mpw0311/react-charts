@@ -35,6 +35,10 @@ export default [
                 path: '/echarts/sankey',
                 name: 'Sankey'
             },
+            {
+                path: '/echarts/chinaMap',
+                name: 'ChinaMap'
+            },
         ]
     },
     {
