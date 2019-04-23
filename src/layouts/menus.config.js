@@ -104,8 +104,4 @@ export default [
             },
         ]
     },
-    // {
-    //     path: '/es6',
-    //     name: 'ES6'
-    // }
 ];

@@ -46,8 +46,6 @@ export default class MyTabs extends PureComponent {
                 e.preventDefault();
             }
         };
-
-
         return (
             <Tabs defaultActiveKey="1">
                 <TabPane tab={<span><Icon type="setting" />OPTION</span>} key="1">
