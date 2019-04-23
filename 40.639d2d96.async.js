@@ -1,1 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([[40],{FL8D:function(e,t,n){"use strict";n.r(t);var s=n("q1tI"),r=n.n(s),a=n("8Qy9");class o extends s["PureComponent"]{render(){return r.a.createElement(a["a"],this.props)}}o.defaultProps={data:{},type:"pie",loading:!1,showLegend:!1,tooltip:{},seriesSettings:{radius:"55%",center:["40%","50%"]}},t["default"]=o}}]);
