@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { _isData } from '../../methods';
 import Chart from '../../core';
 import { maxBy } from 'lodash';
+import '../../mapData/china';
 //替换值
 const replace = (rows, target) => {
     return rows.map((item, i) => {
@@ -28,7 +29,6 @@ export default class extends PureComponent {
             tooltipFormatter,
             roam = false
         } = this.props;
-        import("../../mapData/china");
         if (!_isData(data)) {
             return (
                 <div style={{
@@ -72,7 +72,7 @@ export default class extends PureComponent {
                         ${name}:${value}<br/>
                     </div>`;
                 },
-                // backgroundColor: 'rgba(220,220,220,0.9)'
+                backgroundColor: 'rgba(220,220,220,0.9)'
             },
             visualMap: {
                 seriesIndex: [0],
