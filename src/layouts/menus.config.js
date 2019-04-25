@@ -20,6 +20,10 @@ export default [
                 name: 'YBar'
             },
             {
+                path: '/echarts/candlestick',
+                name: 'Candlestick'
+            },
+            {
                 path: '/echarts/funnel',
                 name: 'Funnel'
             },
