@@ -133,6 +133,10 @@ export default [
                 path: '/bizcharts/multiBar',
                 name: 'MultiBar'
             },
+            {
+                path: '/bizcharts/pie',
+                name: 'Pie'
+            },
         ]
     }
 ];
