@@ -112,4 +112,27 @@ export default [
             },
         ]
     },
+    {
+        path: '/bizcharts',
+        icon: 'line-chart',
+        name: 'bizcharts',
+        children: [
+            {
+                path: '/bizcharts/line',
+                name: 'Line'
+            },
+            {
+                path: '/bizcharts/multiLine',
+                name: 'MultiLine'
+            },
+            {
+                path: '/bizcharts/bar',
+                name: 'Bar'
+            },
+            {
+                path: '/bizcharts/multiBar',
+                name: 'MultiBar'
+            },
+        ]
+    }
 ];
