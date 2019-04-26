@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([[4],{"/BM5":function(a,t,e){"use strict";e.r(t);var n=e("q1tI"),c=e.n(n),o=e("dPBl");t["default"]=(()=>c.a.createElement(o["a"],{to:"/bizcharts/bar"}))}}]);
