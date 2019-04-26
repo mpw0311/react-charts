@@ -10,7 +10,7 @@ class Chart extends PureComponent {
         return (
             <PageHeader
                 title={'Arc'}
-                routes={['Bmap', 'Arc']}
+                pathtitles={['Bmap', 'Arc']}
                 description={description}
             >
                 <Arc />

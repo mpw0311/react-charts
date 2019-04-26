@@ -10,7 +10,7 @@ class Chart extends PureComponent {
         return (
             <PageHeader
                 title={'饼图'}
-                routes={['Echarts', 'Pie']}
+                pathtitles={['Echarts', 'Pie']}
                 description={description}
             >
                 <Panel type={'B'}>

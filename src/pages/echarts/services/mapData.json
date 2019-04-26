@@ -1,0 +1,230 @@
+{
+    "columns": [
+        {
+            "field": "name",
+            "name": "省市",
+            "type": "string"
+        },
+        {
+            "field": "email",
+            "name": "邮件营销",
+            "type": "string"
+        },
+        {
+            "field": "union",
+            "name": "联盟广告",
+            "type": "string"
+        },
+        {
+            "field": "video",
+            "name": "视频广告",
+            "type": "string"
+        }
+    ],
+    "rows": [
+        {
+            "name": "北京",
+            "email": 9,
+            "union": 188,
+            "video": 235
+        },
+        {
+            "name": "天津",
+            "email": 93,
+            "union": 182,
+            "video": 312
+        },
+        {
+            "name": "上海",
+            "email": 90,
+            "union": 192,
+            "video": 32
+        },
+        {
+            "name": "重庆",
+            "email": 144,
+            "union": 252,
+            "video": 48
+        },
+        {
+            "name": "河北",
+            "email": 116,
+            "union": 95,
+            "video": 86
+        },
+        {
+            "name": "河南",
+            "email": 58,
+            "union": 46,
+            "video": 193
+        },
+        {
+            "name": "云南",
+            "email": 131,
+            "union": 39,
+            "video": 268
+        },
+        {
+            "name": "辽宁",
+            "email": 140,
+            "union": 161,
+            "video": 130
+        },
+        {
+            "name": "黑龙江",
+            "email": 160,
+            "union": 165,
+            "video": 305
+        },
+        {
+            "name": "湖南",
+            "email": 173,
+            "union": 93,
+            "video": 193
+        },
+        {
+            "name": "安徽",
+            "email": 27,
+            "union": 53,
+            "video": 118
+        },
+        {
+            "name": "山东",
+            "email": 165,
+            "union": 155,
+            "video": 71
+        },
+        {
+            "name": "新疆",
+            "email": 89,
+            "union": 11,
+            "video": 64
+        },
+        {
+            "name": "江苏",
+            "email": 172,
+            "union": 5,
+            "video": 205
+        },
+        {
+            "name": "浙江",
+            "email": 190,
+            "union": 3,
+            "video": 340
+        },
+        {
+            "name": "江西",
+            "email": 99,
+            "union": 311,
+            "video": 199
+        },
+        {
+            "name": "湖北",
+            "email": 107,
+            "union": 17,
+            "video": 278
+        },
+        {
+            "name": "广西",
+            "email": 48,
+            "union": 239,
+            "video": 218
+        },
+        {
+            "name": "甘肃",
+            "email": 10,
+            "union": 186,
+            "video": 42
+        },
+        {
+            "name": "山西",
+            "email": 89,
+            "union": 190,
+            "video": 112
+        },
+        {
+            "name": "内蒙古",
+            "email": 192,
+            "union": 377,
+            "video": 16
+        },
+        {
+            "name": "陕西",
+            "email": 5,
+            "union": 1,
+            "video": 12
+        },
+        {
+            "name": "吉林",
+            "email": 54,
+            "union": 201,
+            "video": 117
+        },
+        {
+            "name": "福建",
+            "email": 15,
+            "union": 195,
+            "video": 103
+        },
+        {
+            "name": "贵州",
+            "email": 107,
+            "union": 26,
+            "video": 336
+        },
+        {
+            "name": "广东",
+            "email": 76,
+            "union": 105,
+            "video": 187
+        },
+        {
+            "name": "青海",
+            "email": 97,
+            "union": 12,
+            "video": 143
+        },
+        {
+            "name": "西藏",
+            "email": 16,
+            "union": 259,
+            "video": 17
+        },
+        {
+            "name": "四川",
+            "email": 18,
+            "union": 353,
+            "video": 227
+        },
+        {
+            "name": "宁夏",
+            "email": 154,
+            "union": 26,
+            "video": 154
+        },
+        {
+            "name": "海南",
+            "email": 20,
+            "union": 336,
+            "video": 309
+        },
+        {
+            "name": "台湾",
+            "email": 79,
+            "union": 61,
+            "video": 321
+        },
+        {
+            "name": "香港",
+            "email": 75,
+            "union": 168,
+            "video": 106
+        },
+        {
+            "name": "澳门",
+            "email": 0,
+            "union": 43,
+            "video": 54
+        }
+    ]
+}

@@ -1,5 +1,6 @@
 import { PureComponent, Fragment } from 'react';
-import { PageHeader, Card, Icon } from 'antd';
+import { PageHeader, Card } from 'antd';
+import Icon from '@components/Icon';
 export default class extends PureComponent {
     constructor(props) {
         super(props);
@@ -8,8 +9,8 @@ export default class extends PureComponent {
         };
     }
     render() {
-        const { title, routes, description, children } = this.props;
-        const list = routes.map(item => ({ breadcrumbName: item }));
+        const { title, pathtitles, description, children } = this.props;
+        const list = pathtitles.map(item => ({ breadcrumbName: item }));
         return (
             <Fragment>
                 <PageHeader
