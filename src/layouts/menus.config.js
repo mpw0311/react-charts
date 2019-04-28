@@ -46,6 +46,43 @@ export default [
         ]
     },
     {
+        path: '/bizcharts',
+        icon: 'line-chart',
+        name: 'bizcharts',
+        children: [
+            {
+                path: '/bizcharts/line',
+                name: 'Line'
+            },
+            {
+                path: '/bizcharts/multiLine',
+                name: 'MultiLine'
+            },
+            {
+                path: '/bizcharts/bar',
+                name: 'Bar'
+            },
+            {
+                path: '/bizcharts/multiBar',
+                name: 'MultiBar'
+            },
+            {
+                path: '/bizcharts/pie',
+                name: 'Pie'
+            },
+        ]
+    }, 
+    {
+        name: 'canvas demo',
+        icon: 'pie-chart',
+        children:[
+            {
+                path: '/canvas/waterWave',
+                name: 'waterWave'
+            },
+        ]
+    },
+    {
         path: '/bmap',
         icon: 'icon-bMap',
         name: '百度地图',
@@ -112,31 +149,4 @@ export default [
             },
         ]
     },
-    {
-        path: '/bizcharts',
-        icon: 'line-chart',
-        name: 'bizcharts',
-        children: [
-            {
-                path: '/bizcharts/line',
-                name: 'Line'
-            },
-            {
-                path: '/bizcharts/multiLine',
-                name: 'MultiLine'
-            },
-            {
-                path: '/bizcharts/bar',
-                name: 'Bar'
-            },
-            {
-                path: '/bizcharts/multiBar',
-                name: 'MultiBar'
-            },
-            {
-                path: '/bizcharts/pie',
-                name: 'Pie'
-            },
-        ]
-    }
 ];
