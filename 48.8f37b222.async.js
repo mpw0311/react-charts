@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([[48],{qZTmo:function(e,n,t){"use strict";t.r(n),t.d(n,"default",function(){return s});var r=t("q1tI"),a=t.n(r),o=t("vVcU");class s extends r["PureComponent"]{render(){return a.a.createElement(o["a"],this.props)}}s.defaultProps={data:{},type:"line",loading:!1}}}]);
