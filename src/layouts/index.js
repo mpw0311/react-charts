@@ -1,6 +1,7 @@
 import { Layout } from 'antd';
 import Menu from './menu';
 import styles from './index.less';
+import StartedModal from './startedModal';
 import logo from '../assets/logo.png';
 const {
   Header, Sider, Content,
@@ -21,6 +22,7 @@ function BasicLayout(props) {
         </Sider>
         <Content className={styles.content}>
           {props.children}
+          <StartedModal />
         </Content>
       </Layout>
     </Layout>

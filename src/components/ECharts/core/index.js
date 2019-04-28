@@ -10,7 +10,6 @@ import PropTypes from 'prop-types';
 // import Context from '@context';
 import chartConfig from '../config';
 
-let timer = null;
 export default class Chart extends PureComponent {
     static defaultProps = {
         isBindResize: false,
@@ -20,17 +19,24 @@ export default class Chart extends PureComponent {
         const { isBindResize } = this.props;
         isBindResize && this.bindResize();
     }
+    componentDidUpdate() {
+        const { isBindResize } = this.props;
+        isBindResize && this.bindResize();
+    }
     bindResize = () => {
         window.addEventListener('resize', () => {
-            let echarts_instance = this.echarts_react && this.echarts_react.getEchartsInstance();
-            clearTimeout(timer);
-            timer = setTimeout(() => {
+            requestAnimationFrame(() => {
+                let echarts_instance = this.echarts_react && this.echarts_react.getEchartsInstance();
                 echarts_instance && echarts_instance.resize && echarts_instance.resize();
-            }, 200);
+            });
+            // clearTimeout(timer);
+            // timer = setTimeout(() => {
+            //     echarts_instance && echarts_instance.resize && echarts_instance.resize();
+            // }, 200);
         });
     }
     render() {
-        const { style, theme='light', height, ...rest } = this.props;
+        const { style, theme = 'light', height, ...rest } = this.props;
         return (
             // <Context.Consumer>
             //     {({ theme }) => (
