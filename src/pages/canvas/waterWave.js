@@ -1,12 +1,14 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import { InputNumber } from 'antd';
 import WaterWave from '@components/Charts/WaterWave';
 import PageHeader from '@components/PageHeader';
+import stateContext from '../../layouts/context';
 export default () => {
     //声明新状态变量
     const [percent, setPercent] = useState(40);
+    const { theme } = useContext(stateContext);
     useEffect(() => {
-        console.log(percent);
+        console.log(theme, percent);
     }, [percent]);//只有percent值发生变化的时候执行
     return (
         <PageHeader
