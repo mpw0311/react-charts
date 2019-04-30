@@ -12,6 +12,9 @@
 .logo img {
   width: 45px;
 }
+.logoHide {
+  display: none;
+}
 .title {
   padding-left: 10px;
   color: #ffffff;
@@ -19,7 +22,6 @@
   flex: auto;
 }
 .menu {
-  width: 200px;
   height: calc(100vh - 70px);
   overflow-y: auto;
   /*火狐下隐藏滚动条*/
@@ -27,6 +29,7 @@
   /*滚动条里面轨道*/
   /*隐藏滚动条，当IE下溢出，仍然可以滚动*/
   -ms-overflow-style: none;
+  padding-bottom: 40px;
 }
 .menu::-webkit-scrollbar {
   /*滚动条整体样式*/

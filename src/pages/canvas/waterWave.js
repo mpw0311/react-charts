@@ -3,6 +3,7 @@ import { InputNumber } from 'antd';
 import WaterWave from '@components/Charts/WaterWave';
 import PageHeader from '@components/PageHeader';
 import stateContext from '../../layouts/context';
+
 export default () => {
     //声明新状态变量
     const [percent, setPercent] = useState(40);

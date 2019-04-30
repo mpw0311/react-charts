@@ -40,7 +40,7 @@ export default class extends PureComponent {
         });
     }
     render() {
-        const { location: { pathname } } = this.props;
+        const { location: { pathname }, inlineCollapsed } = this.props;
         return (
             <Context.Consumer>
                 {
@@ -49,6 +49,7 @@ export default class extends PureComponent {
                         mode="inline"
                         theme={theme}
                         className={styles.menu}
+                        inlineCollapsed={inlineCollapsed}
                     >
                         {this.renderMenu(menuList)}
                     </Menu>)
