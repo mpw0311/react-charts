@@ -13,6 +13,8 @@ class WaterWave extends PureComponent {
     window.addEventListener(
       'resize',
       () => {
+        //所有注册到 raf 中的回调，浏览器会统一管理， 在适当的时候一同执行所有回调。
+        //当页面不可见，例如当前标签页被切换，隐藏在后面的时候，为了减少终端的损耗，raf 就会暂停。
         requestAnimationFrame(() => this.resize());
       },
       { passive: true }

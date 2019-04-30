@@ -3,6 +3,7 @@ import { Link } from 'umi';
 import { Menu } from 'antd';
 import Icon from '@components/Icon';
 import menuList from './menus.config';
+import Context from './context';
 import styles from './index.less';
 
 export default class extends PureComponent {
@@ -39,16 +40,21 @@ export default class extends PureComponent {
         });
     }
     render() {
-        const { location: { pathname } } = this.props;
+        const { location: { pathname }, inlineCollapsed } = this.props;
         return (
-            <Menu
-                defaultSelectedKeys={[pathname]}
-                mode="inline"
-                theme='dark'
-                className={styles.menu}
-            >
-                {this.renderMenu(menuList)}
-            </Menu>
+            <Context.Consumer>
+                {
+                    ({ theme }) => (<Menu
+                        defaultSelectedKeys={[pathname]}
+                        mode="inline"
+                        theme={theme}
+                        className={styles.menu}
+                        inlineCollapsed={inlineCollapsed}
+                    >
+                        {this.renderMenu(menuList)}
+                    </Menu>)
+                }
+            </Context.Consumer>
         );
     }
 }
