@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([[27],{Djal:function(a,e,n){"use strict";n.r(e);var t=n("q1tI"),w=n.n(t),c=n("dPBl");e["default"]=(()=>w.a.createElement(c["a"],{to:"/canvas/waterWave"}))}}]);

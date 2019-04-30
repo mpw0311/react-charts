@@ -1,1 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([[27],{ysmt:function(s,e,a){"use strict";a.r(e);var n=a("p0pE"),p=a.n(n);e["default"]={namespace:"canvas",state:{},subscriptions:{},effects:{},reducers:{save(s,e){return p()({},s,e.payload)}}}}}]);
