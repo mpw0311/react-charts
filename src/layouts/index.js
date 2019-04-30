@@ -1,8 +1,10 @@
 import { PureComponent } from 'react';
+import { connect } from 'dva';
+import Media from 'react-media';
 import Layout from './layout';
 import Context from './context';
 
-export default class extends PureComponent {
+class Index extends PureComponent {
   state = {
     theme: 'dark'
   }
@@ -15,3 +17,10 @@ export default class extends PureComponent {
     );
   }
 }
+export default connect(({ global }) => ({
+  collapsed: global.collapsed,
+}))(props =>
+  <Media query="(max-width: 899px)">
+    {isMobile => <Index {...props} isMobile={isMobile} />}
+  </Media>
+);

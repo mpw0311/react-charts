@@ -12,11 +12,28 @@ class BasicLayout extends PureComponent {
     state = {
         collapsed: false,
     };
+    static defaultProps = {
+        isMobile: false
+    };
+    componentDidMount() {
+        const { isMobile } = this.props;
+        const { collapsed } = this.state;
+        if (isMobile !== collapsed) {
+            this.setState({ collapsed: isMobile });
+        }
+    }
+    componentWillReceiveProps(nextProps) {
+        const { isMobile } = nextProps;
+        if (isMobile !== this.props.isMobile && isMobile !== this.state.collapsed) {
+            this.setState({ collapsed: isMobile });
+        }
+
+    }
     onCollapse = (collapsed) => {
         this.setState({ collapsed });
     }
     render() {
-        const { collapsed } = this.state;
+        const { collapsed, } = this.state;
         return (
             <Layout>
                 <Layout style={{ height: '100vh' }}>

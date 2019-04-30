@@ -5,8 +5,7 @@ import Icon from '@components/Icon';
 import menuList from './menus.config';
 import Context from './context';
 import styles from './index.less';
-
-export default class extends PureComponent {
+class MenuView extends PureComponent {
     static defaultProps = {
         mode: 'inline'
     }
@@ -58,3 +57,4 @@ export default class extends PureComponent {
         );
     }
 }
+export default MenuView;
