@@ -16,7 +16,9 @@ class BasicLayout extends PureComponent {
         this.setState({ collapsed });
     }
     render() {
-        const { collapsed } = this.state;
+        const { collapsed, isMobile } = this.state;
+        console.log('isMobile', isMobile);
+        alert(isMobile ? "Mobile" : 'pc');
         return (
             <Layout>
                 <Layout style={{ height: '100vh' }}>

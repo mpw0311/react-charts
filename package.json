@@ -18,7 +18,8 @@
     "memoize-one": "^5.0.0",
     "react": "^16.7.0",
     "react-bmap": "^1.0.96",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "react-media": "^1.9.2"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",
